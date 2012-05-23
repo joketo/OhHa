@@ -50,6 +50,8 @@ public class Kayttoliittyma implements Runnable {
     }
 
     public JFrame getFrame() {
+        
+        
         return frame;
     }
 }
