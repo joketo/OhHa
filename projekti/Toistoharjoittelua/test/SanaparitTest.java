@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 
+import java.util.HashMap;
 import org.junit.*;
 import static org.junit.Assert.*;
 
@@ -11,24 +12,22 @@ import static org.junit.Assert.*;
  * @author johanna
  */
 public class SanaparitTest {
-    
-    public SanaparitTest() {
-    }
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
+    Sanaparit sanaparit;
 
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-    
     @Before
     public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+        HashMap<String, String> sanasto1To2 = new HashMap<String, String>();
+        HashMap<String, String> sanasto2To1 = new HashMap<String, String>();
+        sanasto1To2.put("kala", "a fish");
+        sanasto1To2.put("kukka", "a flower");
+        sanasto1To2.put("kitara", "a guitar");
+        sanasto1To2.put("leipä", "bread");
+        sanasto2To1.put("a fish", "kala");
+        sanasto2To1.put("a flower", "kukka");
+        sanasto2To1.put("a guitar", "kitara");
+        sanasto2To1.put("bread", "leipä");
+        sanaparit = new Sanaparit(sanasto1To2, sanasto2To1);
     }
 
     /**
@@ -37,14 +36,23 @@ public class SanaparitTest {
     @Test
     public void testOnkoParitSanasto1To2() {
         System.out.println("onkoParitSanasto1To2");
-        String eka = "";
-        String toka = "";
-        Sanaparit instance = null;
+        String eka = "kala";
+        String toka = "a fish";
+        Sanaparit instance = sanaparit;
+        boolean expResult = true;
+        boolean result = instance.onkoParitSanasto1To2(eka, toka);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testOnkoParitSanasto1To2fail() {
+        System.out.println("onkoParitSanasto1To2");
+        String eka = "kala";
+        String toka = "koira";
+        Sanaparit instance = sanaparit;
         boolean expResult = false;
         boolean result = instance.onkoParitSanasto1To2(eka, toka);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -53,14 +61,24 @@ public class SanaparitTest {
     @Test
     public void testOnkoParitSanasto2To1() {
         System.out.println("onkoParitSanasto2To1");
-        String eka = "";
-        String toka = "";
-        Sanaparit instance = null;
+        String eka = "a flower";
+        String toka = "kukka";
+        Sanaparit instance = sanaparit;
+        boolean expResult = true;
+        boolean result = instance.onkoParitSanasto2To1(eka, toka);
+        assertEquals(expResult, result);
+
+    }
+    @Test
+    public void testOnkoParitSanasto2To1fail() {
+        System.out.println("onkoParitSanasto2To1");
+        String eka = "a flower";
+        String toka = "jaa";
+        Sanaparit instance = sanaparit;
         boolean expResult = false;
         boolean result = instance.onkoParitSanasto2To1(eka, toka);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -69,13 +87,12 @@ public class SanaparitTest {
     @Test
     public void testGetPariSanasto1To2() {
         System.out.println("getPariSanasto1To2");
-        String sana = "";
-        Sanaparit instance = null;
-        String expResult = "";
+        String sana = "kukka";
+        Sanaparit instance = sanaparit;
+        String expResult = "a flower";
         String result = instance.getPariSanasto1To2(sana);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -84,12 +101,11 @@ public class SanaparitTest {
     @Test
     public void testGetPariSanasto2To1() {
         System.out.println("getPariSanasto2To1");
-        String sana = "";
-        Sanaparit instance = null;
-        String expResult = "";
+        String sana = "a flower";
+        Sanaparit instance = sanaparit;
+        String expResult = "kukka";
         String result = instance.getPariSanasto2To1(sana);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 }
