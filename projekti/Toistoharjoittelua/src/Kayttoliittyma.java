@@ -43,8 +43,10 @@ public class Kayttoliittyma implements Runnable {
         JButton harjoitella = new JButton("Harjoitella");
         JButton koe = new JButton("Suorittaa kokeen");
         container.setLayout(new GridLayout(3,1));
-        Tapahtumankuuntelija kuuntelija = new Tapahtumankuuntelija();
-        koe.addActionListener(kuuntelija);
+        KoeTapahtumankuuntelija koekuuntelija = new KoeTapahtumankuuntelija();
+        HarjoitusTapahtumanKuuntelija harjkuuntelija = new HarjoitusTapahtumanKuuntelija();
+        koe.addActionListener(koekuuntelija);
+        harjoitella.addActionListener(harjkuuntelija);
         container.add(harjoitella);
         container.add(koe);
     }
