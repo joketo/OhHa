@@ -47,7 +47,7 @@ public class Kayttoliittyma implements Runnable {
         HarjoitusTapahtumanKuuntelija harjkuuntelija = new HarjoitusTapahtumanKuuntelija();
         koe.addActionListener(koekuuntelija);
         harjoitella.addActionListener(harjkuuntelija);
-        container.add(harjoitella);
+        container.add(harjoitella); // erilliset käyttöliittymät kokeelle ja harjoitukselle?
         container.add(koe);
     }
 

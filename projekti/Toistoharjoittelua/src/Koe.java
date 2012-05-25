@@ -1,4 +1,5 @@
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -15,15 +16,16 @@ import java.util.logging.Logger;
 public class Koe {
 
     Sanalukija sanalukija;
-    TiedostonLuoja tiedostonLuoja = new TiedostonLuoja();
+    TiedostonLuoja tiedostonLuoja = new TiedostonLuoja(); 
+    File kahva = tiedostonLuoja.getFile();
     Scanner lukija;
     Scanner nappaimisto = new Scanner(System.in);
     Sanaparit sanaparit;
 
     public Koe() {
         try {
-            lukija = new Scanner(tiedostonLuoja.getFile());
-            sanalukija = new Sanalukija(tiedostonLuoja.getFile());
+            lukija = new Scanner(kahva);//tiedostonluoja voisi käsitellä File-olion omassa luokassaan?
+            sanalukija = new Sanalukija(kahva);
         } catch (FileNotFoundException ex) {
             System.out.println("Tiedostoa ei löydy");
         }
@@ -31,7 +33,8 @@ public class Koe {
 
     public void run() {
         System.out.println("Saat nyt tehtäväksesi satunnaisen setin kysymyksiä.");
-      //  sanaparit = sanalukija.luoSanaparitOlio();
+        //sanaparit = sanalukija.luoSanaparitOlio();
+        
         //while (!sanaparit.sanasto1To2.isEmpty()) {
           //  for (String i : sanaparit.sanasto1To2.keySet()) {
             //    System.out.println(i);

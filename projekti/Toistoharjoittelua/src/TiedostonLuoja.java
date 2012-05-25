@@ -11,11 +11,11 @@ import java.io.IOException;
  *
  * @author johanna
  */
-public class TiedostonLuoja {
+public class TiedostonLuoja { //muut ehkä perii tämän luokan?
     File kahva = new File("kemialliset merkit");
     public TiedostonLuoja(){
         try {
-            kahva.createNewFile();   //tiedosto luodaan tässä
+            kahva.createNewFile();   //tiedosto luodaan tässä, oma metodi sille?
         } catch (IOException ex) {
             System.out.println("Ei löydy");
             
