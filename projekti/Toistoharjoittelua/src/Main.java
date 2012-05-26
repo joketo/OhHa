@@ -8,7 +8,7 @@ public class Main {
      */
     public static void main(String[] args) {
         TiedostonLuoja tiedosto = new TiedostonLuoja();
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma();
+        Aloitusruutu kayttoliittyma = new Aloitusruutu();
         SwingUtilities.invokeLater(kayttoliittyma);
 
     }

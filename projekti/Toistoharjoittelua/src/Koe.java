@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
 
 /*
  * To change this template, choose Tools | Templates and open the template in
@@ -32,7 +33,8 @@ public class Koe {
     }
 
     public void run() {
-        System.out.println("Saat nyt tehtäväksesi satunnaisen setin kysymyksiä.");
+        KokeenKayttoliittyma kayttoliittyma = new KokeenKayttoliittyma();
+        SwingUtilities.invokeLater(kayttoliittyma);
         //sanaparit = sanalukija.luoSanaparitOlio();
         
         //while (!sanaparit.sanasto1To2.isEmpty()) {

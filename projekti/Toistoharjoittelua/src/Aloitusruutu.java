@@ -17,11 +17,11 @@ import javax.swing.*;
 import java.awt.GridLayout;
    
 
-public class Kayttoliittyma implements Runnable {
+public class Aloitusruutu implements Runnable {
 
     private JFrame frame;
 
-    public Kayttoliittyma() {
+    public Aloitusruutu() {
     }
 
     @Override
