@@ -11,8 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class KoeTapahtumankuuntelija implements ActionListener{
     Koe koe;
-    public KoeTapahtumankuuntelija(){
-        this.koe = new Koe();
+    public KoeTapahtumankuuntelija(String tiedostonnimi){
+        this.koe = new Koe(tiedostonnimi);
     }
     @Override
     public void actionPerformed(ActionEvent ae){

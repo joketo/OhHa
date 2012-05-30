@@ -35,4 +35,10 @@ public class Sanaparit {
     public String getPariSanasto2To1(String sana) {
         return sanasto2To1.get(sana);
     }
+    public HashMap<String, String> getSanasto1To2(){
+        return sanasto1To2;
+    }
+    public HashMap<String, String> getSanasto2To1(){
+        return sanasto2To1;
+    }
 }

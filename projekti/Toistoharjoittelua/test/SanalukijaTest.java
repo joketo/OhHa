@@ -3,6 +3,8 @@
  * and open the template in the editor.
  */
 
+import java.io.File;
+import java.util.HashMap;
 import org.junit.*;
 import static org.junit.Assert.*;
 
@@ -11,24 +13,22 @@ import static org.junit.Assert.*;
  * @author johanna
  */
 public class SanalukijaTest {
-    
-    public SanalukijaTest() {
-    }
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
+    private HashMap<String, String> sanasto1To2 = new HashMap<String, String>();
+    private HashMap<String, String> sanasto2To1 = new HashMap<String, String>();
 
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-    
     @Before
     public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+
+        sanasto1To2.put("kala", "a fish");
+        sanasto1To2.put("kukka", "a flower");
+        sanasto1To2.put("kitara", "a guitar");
+        sanasto1To2.put("leipä", "bread");
+        sanasto2To1.put("a fish", "kala");
+        sanasto2To1.put("a flower", "kukka");
+        sanasto2To1.put("a guitar", "kitara");
+        sanasto2To1.put("bread", "leipä");
+        Sanalukija sananlukija = new Sanalukija(new File("testikoe"));
     }
 
     /**

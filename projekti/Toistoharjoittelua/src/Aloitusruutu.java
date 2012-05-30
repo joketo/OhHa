@@ -38,12 +38,14 @@ public class Aloitusruutu implements Runnable {
     }
 
     private void luoKomponentit(Container container) {
+        JLabel tiedosto = new JLabel("Anna tiedosto");
+        String nimi = "kemialliset merkit";
         JLabel teksti = new JLabel("   Aloitetaanpa! Tahdotko harjoitella vai suorittaa kokeen?");
         container.add(teksti);
         JButton harjoitella = new JButton("Harjoitella");
         JButton koe = new JButton("Suorittaa kokeen");
         container.setLayout(new GridLayout(3,1));
-        KoeTapahtumankuuntelija koekuuntelija = new KoeTapahtumankuuntelija();
+        KoeTapahtumankuuntelija koekuuntelija = new KoeTapahtumankuuntelija(nimi);
         HarjoitusTapahtumanKuuntelija harjkuuntelija = new HarjoitusTapahtumanKuuntelija();
         koe.addActionListener(koekuuntelija);
         harjoitella.addActionListener(harjkuuntelija);
