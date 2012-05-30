@@ -16,6 +16,7 @@ public class SanalukijaTest {
 
     private HashMap<String, String> sanasto1To2 = new HashMap<String, String>();
     private HashMap<String, String> sanasto2To1 = new HashMap<String, String>();
+    private Sanalukija sananlukija;
 
     @Before
     public void setUp() {
@@ -28,7 +29,7 @@ public class SanalukijaTest {
         sanasto2To1.put("a flower", "kukka");
         sanasto2To1.put("a guitar", "kitara");
         sanasto2To1.put("bread", "leipä");
-        Sanalukija sananlukija = new Sanalukija(new File("testikoe"));
+        sananlukija = new Sanalukija(new File("testikoe"));
     }
 
     /**
@@ -37,11 +38,10 @@ public class SanalukijaTest {
     @Test
     public void testLuoSanaparitOlio() {
         System.out.println("luoSanaparitOlio");
-        Sanalukija instance = null;
-        Sanaparit expResult = null;
-        Sanaparit result = instance.luoSanaparitOlio();
+        Sanalukija instance = sananlukija;
+        HashMap<String, String> expResult = sanasto1To2;
+        HashMap<String, String> result = instance.luoSanaparitOlio().getSanasto1To2();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 }
