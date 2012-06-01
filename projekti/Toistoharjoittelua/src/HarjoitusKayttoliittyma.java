@@ -4,7 +4,7 @@
  */
 
 /**
- *
+ * Tämä luokka huolehtii harjoituksen graafisesta ulkoasusta 
  * @author johanna
  */
 import java.awt.Container;
@@ -24,7 +24,7 @@ public class HarjoitusKayttoliittyma implements Runnable {
 
     @Override
     public void run() {
-        frame = new JFrame("Koe");
+        frame = new JFrame("Harjoittelua");
         frame.setPreferredSize(new Dimension(500, 100));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
