@@ -4,7 +4,8 @@
  */
 
 /**
- *
+ *Tämä on ohjelman "aloitusikkuna", josta käyttäjä voi valita, haluaako suorittaa 
+ * kokeen vai vain harjoitella sanoja.
  * @author johanna
  */
 
