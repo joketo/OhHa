@@ -6,7 +6,8 @@ package Kayttoliittyma;
  */
 
 /**
- *
+ *Tämä luokka huolehtii kokeen graafisesta ulkoasusta. Nappien taakse on
+ * kätketty toimintaa, joka tapahtuu logiikka-pakkauksen luokissa.
  * @author johanna
  */
 import java.awt.Container;

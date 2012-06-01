@@ -3,7 +3,10 @@ package Kayttoliittyma;
 
 import Kayttoliittyma.Aloitusruutu;
 import javax.swing.SwingUtilities;
-
+/**
+ * Main käynnistää ohjelman
+ * @author johanna
+ */
 public class Main {
 
     /**

@@ -6,7 +6,8 @@ package Logiikka;
  */
 
 /**
- *
+ * Sanalukija purkaa saamansa tiedoston kahdenlaiseen HashMappiin. Ohjelmalle kelpaavat tiedostot,
+ * joissa joka toisella rivillä on esim. sana suomeksi ja joka toisella sama käännettynä halutulle kielelle.
  * @author johanna
  */
 import Logiikka.Sanaparit;
@@ -53,8 +54,12 @@ public class Sanalukija {
             return sanasto2To1;   //johanna huom! muista käsitellä tämä mahdollisuus, että mappi onkin tyhjä
         }
     }
+    /**
+     * Sanalukija luo Sanaparit-olion antaen tälle luomansa HashMapit.
+     * @return 
+     */
     public Sanaparit luoSanaparitOlio(){
         this.sanastot = new Sanaparit(luoSanasto1To2HashMap(tiedosto), luoSanasto2To1HashMap(tiedosto));
         return this.sanastot;
-    }//aika sotkuista, pitää vielä hioa
+    }
 }

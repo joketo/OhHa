@@ -1,6 +1,10 @@
 package Logiikka;
 
-
+/**
+ * Sanaparit on ohjelman logiikan kannalta ehkä tärkein luokka. Se käsittelee sanapareja kahdessa
+ * eri HashMapissa ja esim. tutkii ovatko tietyt sanat pareja keskenään, tai mikä on tietyn sanan pari.
+ * Näiden tietojen saaminen on ohjelman kannalta tärkeää.
+ */
 import java.util.HashMap;
 
 public class Sanaparit {

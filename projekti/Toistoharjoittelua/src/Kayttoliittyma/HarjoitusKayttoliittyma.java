@@ -5,10 +5,7 @@ package Kayttoliittyma;
  * and open the template in the editor.
  */
 
-/**
- * Tämä luokka huolehtii harjoituksen graafisesta ulkoasusta 
- * @author johanna
- */
+
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -16,6 +13,12 @@ import javax.swing.WindowConstants;
 import javax.swing.JLabel;
 import javax.swing.*;
 import java.awt.GridLayout;
+
+/**
+ * Tämä luokka huolehtii harjoituksen graafisesta ulkoasusta. Nappien taakse on
+ * kätketty toimintaa, joka tapahtuu logiikka-pakkauksen luokissa.
+ * @author johanna
+ */
 
 public class HarjoitusKayttoliittyma implements Runnable {
 

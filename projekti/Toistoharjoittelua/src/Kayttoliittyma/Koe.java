@@ -6,7 +6,8 @@ package Kayttoliittyma;
  */
 
 /**
- *
+ * Koe-luokka reagoi Aloitusruudun napin "tahdon suorittaa kokeen" painallukseen
+ * ja käynnistää koekäyttöliittymän
  * @author johanna
  */
 import Logiikka.Sanalukija;

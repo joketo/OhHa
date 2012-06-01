@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- *
+ * Tämä toistaiseksi vielä turha luokka. Jos aika riittää, tästä rakennetaan työväline, jolla voi luoda luettavia tiedostoja
  * @author johanna
  */
 public class TiedostonKasittelija {

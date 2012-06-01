@@ -13,7 +13,8 @@ import javax.swing.SwingUtilities;
  * the editor.
  */
 /**
- *
+ * Harjoitus-luokka reagoi Aloitusruudun napin "tahdon harjoitella" painallukseen ja käynnistää harjoituskäyttöliittymän
+ * 
  * @author johanna
  */
 public class Harjoitus implements ActionListener {
