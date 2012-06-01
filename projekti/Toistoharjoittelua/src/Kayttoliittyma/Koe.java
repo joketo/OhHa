@@ -1,3 +1,5 @@
+package Kayttoliittyma;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -7,6 +9,8 @@
  *
  * @author johanna
  */
+import Logiikka.Sanalukija;
+import Logiikka.Sanaparit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;

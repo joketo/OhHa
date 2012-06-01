@@ -1,3 +1,5 @@
+package Logiikka;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -7,6 +9,7 @@
  *
  * @author johanna
  */
+import Logiikka.Sanaparit;
 import java.util.HashMap;
 import java.io.File;
 import java.io.FileNotFoundException;

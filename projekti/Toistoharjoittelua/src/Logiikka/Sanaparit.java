@@ -1,3 +1,5 @@
+package Logiikka;
+
 
 import java.util.HashMap;
 

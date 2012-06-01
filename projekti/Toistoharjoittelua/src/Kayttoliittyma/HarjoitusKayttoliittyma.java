@@ -1,10 +1,12 @@
+package Kayttoliittyma;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
 /**
- *
+ * Tämä luokka huolehtii harjoituksen graafisesta ulkoasusta 
  * @author johanna
  */
 import java.awt.Container;
@@ -15,16 +17,16 @@ import javax.swing.JLabel;
 import javax.swing.*;
 import java.awt.GridLayout;
 
-public class KokeenKayttoliittyma implements Runnable {
+public class HarjoitusKayttoliittyma implements Runnable {
 
     private JFrame frame;
 
-    public KokeenKayttoliittyma() {
+    public HarjoitusKayttoliittyma() {
     }
 
     @Override
     public void run() {
-        frame = new JFrame("Koe");
+        frame = new JFrame("Harjoittelua");
         frame.setPreferredSize(new Dimension(500, 100));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -36,7 +38,7 @@ public class KokeenKayttoliittyma implements Runnable {
     }
 
     private void luoKomponentit(Container container) {
-        JLabel teksti = new JLabel("Saat nyt suoritettavaksesi setin sanapareja.");
+        JLabel teksti = new JLabel("testaus");
         container.add(teksti);
     }
 
