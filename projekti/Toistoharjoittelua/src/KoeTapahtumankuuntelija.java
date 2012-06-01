@@ -9,13 +9,18 @@
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import javax.swing.SwingUtilities;
 public class KoeTapahtumankuuntelija implements ActionListener{
-    Koe koe;
+    
+    Sanalukija sanalukija;
+    Sanaparit sanaparit;
     public KoeTapahtumankuuntelija(String tiedostonnimi){
-        this.koe = new Koe(tiedostonnimi);
+        sanalukija = new Sanalukija(new File (tiedostonnimi));
     }
     @Override
     public void actionPerformed(ActionEvent ae){
-        koe.run();
+        KokeenKayttoliittyma kayttoliittyma = new KokeenKayttoliittyma();
+        SwingUtilities.invokeLater(kayttoliittyma);
     }
 }
