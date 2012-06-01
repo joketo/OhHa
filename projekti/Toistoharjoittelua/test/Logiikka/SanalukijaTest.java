@@ -46,4 +46,14 @@ public class SanalukijaTest {
         assertEquals(expResult, result);
 
     }
+    
+        @Test
+    public void testLuoSanaparitOlio2() {
+        System.out.println("luoSanaparitOlio");
+        Sanalukija instance = sananlukija;
+        HashMap<String, String> expResult = sanasto2To1;
+        HashMap<String, String> result = instance.luoSanaparitOlio().getSanasto2To1();
+        assertEquals(expResult, result);
+
+    }
 }

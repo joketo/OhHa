@@ -29,7 +29,7 @@ public class HarjoitusKayttoliittyma implements Runnable {
 
     public HarjoitusKayttoliittyma(String tiedostonnimi) {
         sanalukija = new Sanalukija(new File(tiedostonnimi)); //näitä ei välttämättä tarvita täällä ollenkaan
-        //  sanaparit = sanalukija.luoSanaparitOlio();
+        sanaparit = sanalukija.luoSanaparitOlio(); //vaan vasta logiikassa
     }
 
     @Override

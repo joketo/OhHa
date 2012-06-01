@@ -7,7 +7,7 @@ package Kayttoliittyma;
 /**
  * Koe-luokka reagoi Aloitusruudun napin "tahdon suorittaa kokeen" painallukseen
  * ja käynnistää koekäyttöliittymän
- *
+ * En tiedä miten tätä voisi testata.
  * @author johanna
  */
 import java.awt.event.ActionEvent;

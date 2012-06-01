@@ -8,6 +8,7 @@ package Kayttoliittyma;
 /**
  *Tämä on ohjelman "aloitusikkuna", josta käyttäjä voi valita, haluaako suorittaa 
  * kokeen vai vain harjoitella sanoja.
+ * En tiedä miten tätä luokkaa voisi testata. :/
  * @author johanna
  */
 
@@ -42,7 +43,7 @@ public class Aloitusruutu implements Runnable {
 
     private void luoKomponentit(Container container) {
         JLabel tiedosto = new JLabel("Anna tiedosto");
-        String nimi = "kemialliset merkit";
+        String nimi = "testikoe";
         JLabel teksti = new JLabel("   Aloitetaanpa! Tahdotko harjoitella vai suorittaa kokeen?");
         container.add(teksti);
         JButton harjoitella = new JButton("Harjoitella");
@@ -52,7 +53,7 @@ public class Aloitusruutu implements Runnable {
         Harjoitus harjkuuntelija = new Harjoitus(nimi);
         koe.addActionListener(koekuuntelija);
         harjoitella.addActionListener(harjkuuntelija);
-        container.add(harjoitella); // erilliset käyttöliittymät kokeelle ja harjoitukselle?
+        container.add(harjoitella); // erilliset käyttöliittymät kokeelle ja harjoitukselle
         container.add(koe);
     }
 

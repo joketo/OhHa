@@ -7,7 +7,7 @@ package Kayttoliittyma;
 /**
  * Tämä luokka huolehtii kokeen graafisesta ulkoasusta. Nappien taakse on
  * kätketty toimintaa, joka tapahtuu logiikka-pakkauksen luokissa.
- *
+ * En tiedä miten tätä voisi testata.
  * @author johanna
  */
 import java.awt.Container;
@@ -29,7 +29,7 @@ public class KokeenKayttoliittyma implements Runnable {
 
     public KokeenKayttoliittyma(String tiedostonnimi) {
         sanalukija = new Sanalukija(new File(tiedostonnimi)); // ei varmaan näitä tänne
-       // sanaparit = sanalukija.luoSanaparitOlio();
+       sanaparit = sanalukija.luoSanaparitOlio();
     }
 
     @Override
