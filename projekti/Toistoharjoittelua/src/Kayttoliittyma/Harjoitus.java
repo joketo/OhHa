@@ -14,7 +14,7 @@ import javax.swing.SwingUtilities;
 /**
  * Harjoitus-luokka reagoi Aloitusruudun napin "tahdon harjoitella"
  * painallukseen ja käynnistää harjoituskäyttöliittymän
- *
+ * En tiedä miten tätä voisi testata.
  * @author johanna
  */
 public class Harjoitus implements ActionListener {

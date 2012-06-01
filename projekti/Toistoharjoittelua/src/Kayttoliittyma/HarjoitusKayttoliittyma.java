@@ -18,7 +18,7 @@ import java.io.File;
 /**
  * Tämä luokka huolehtii harjoituksen graafisesta ulkoasusta. Nappien taakse on
  * kätketty toimintaa, joka tapahtuu logiikka-pakkauksen luokissa.
- *
+ * En tiedä miten tätä voisi testata.
  * @author johanna
  */
 public class HarjoitusKayttoliittyma implements Runnable {
