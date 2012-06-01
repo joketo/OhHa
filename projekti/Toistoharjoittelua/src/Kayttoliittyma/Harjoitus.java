@@ -1,6 +1,5 @@
 package Kayttoliittyma;
 
-
 import Logiikka.Sanalukija;
 import Logiikka.Sanaparit;
 import java.awt.event.ActionEvent;
@@ -13,23 +12,24 @@ import javax.swing.SwingUtilities;
  * the editor.
  */
 /**
- * Harjoitus-luokka reagoi Aloitusruudun napin "tahdon harjoitella" painallukseen ja käynnistää harjoituskäyttöliittymän
- * 
+ * Harjoitus-luokka reagoi Aloitusruudun napin "tahdon harjoitella"
+ * painallukseen ja käynnistää harjoituskäyttöliittymän
+ *
  * @author johanna
  */
 public class Harjoitus implements ActionListener {
 
-    Sanalukija sanalukija;
-    Sanaparit sanaparit;
+    String tiedostonnimi;
 
-    public Harjoitus (String tiedostonimi) {
-        sanalukija = new Sanalukija(new File (tiedostonimi));
+    public Harjoitus(String tiedostonimi) {
+
+        this.tiedostonnimi = tiedostonimi;
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        HarjoitusKayttoliittyma kayttoliittyma = new HarjoitusKayttoliittyma();
+        HarjoitusKayttoliittyma kayttoliittyma = new HarjoitusKayttoliittyma(tiedostonnimi);
         SwingUtilities.invokeLater(kayttoliittyma);
-        
+
     }
 }
