@@ -4,7 +4,7 @@
  */
 
 /**
- *
+ *Tämä luokka huolehtii kokeen arvostelusta, rakennus vielä hyvin kesken
  * @author johanna
  */
 public class Arvostelija {
