@@ -46,8 +46,8 @@ public class Aloitusruutu implements Runnable {
         JButton harjoitella = new JButton("Harjoitella");
         JButton koe = new JButton("Suorittaa kokeen");
         container.setLayout(new GridLayout(3,1));
-        KoeTapahtumankuuntelija koekuuntelija = new KoeTapahtumankuuntelija(nimi);
-        HarjoitusTapahtumanKuuntelija harjkuuntelija = new HarjoitusTapahtumanKuuntelija();
+        Koe koekuuntelija = new Koe(nimi);
+        Harjoitus harjkuuntelija = new Harjoitus(nimi);
         koe.addActionListener(koekuuntelija);
         harjoitella.addActionListener(harjkuuntelija);
         container.add(harjoitella); // erilliset käyttöliittymät kokeelle ja harjoitukselle?

@@ -11,11 +11,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import javax.swing.SwingUtilities;
-public class KoeTapahtumankuuntelija implements ActionListener{
+public class Koe implements ActionListener{
     
     Sanalukija sanalukija;
     Sanaparit sanaparit;
-    public KoeTapahtumankuuntelija(String tiedostonnimi){
+    public Koe(String tiedostonnimi){
         sanalukija = new Sanalukija(new File (tiedostonnimi));
     }
     @Override
