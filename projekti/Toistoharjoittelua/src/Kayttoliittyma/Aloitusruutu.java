@@ -40,6 +40,10 @@ public class Aloitusruutu implements Runnable {
         frame.pack();
         frame.setVisible(true);
     }
+    /**
+     * Luo aloitusruudun komponentit ja tapahtumankuuntelijat koe- ja harjoitusnapeille
+     * @param container 
+     */
 
     private void luoKomponentit(Container container) {
         JLabel tiedosto = new JLabel("Anna tiedosto");

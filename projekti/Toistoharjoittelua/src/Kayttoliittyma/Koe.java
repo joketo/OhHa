@@ -18,11 +18,17 @@ import javax.swing.SwingUtilities;
 public class Koe implements ActionListener {
 
     String tiedostonimi;
-
+/**
+ * asettaa tiedostonimensä saamansa tiedostonimen mukaiseksi
+ * @param tiedostonnimi 
+ */
     public Koe(String tiedostonnimi) {
         this.tiedostonimi = tiedostonnimi;
     }
-
+/**
+ * käynnistää graafisen käyttöliittymän kokeelle
+ * @param ae 
+ */
     @Override
     public void actionPerformed(ActionEvent ae) {
         KokeenKayttoliittyma kayttoliittyma = new KokeenKayttoliittyma(tiedostonimi);

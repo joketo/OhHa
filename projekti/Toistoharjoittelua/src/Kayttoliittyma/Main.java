@@ -10,6 +10,7 @@ import javax.swing.SwingUtilities;
 public class Main {
 
     /**
+     * käynnistää graafisen käyttöliittymän
      * @param args the command line arguments
      */
     public static void main(String[] args) {

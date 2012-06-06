@@ -48,26 +48,27 @@ public class HarjoitusKayttoliittyma implements Runnable {
         frame.pack();
         frame.setVisible(true);
     }
+    /**
+     * Luo ikkunan komponentit ja harjoituksenkuuntelijan, joka huolehtii ohjelman kulusta
+     * @param container 
+     */
 
     private void luoKomponentit(Container container) {
 
         GridLayout layout = new GridLayout(2, 2);
         container.setLayout(layout);
 
-        JLabel teksti = new JLabel("anna pari -- "); //erillinen kuuntelija, joka seuraa harjoituksenlogiikkaa ja antaa tähän aina sanan?
-        container.add(teksti);
+        JLabel kysymys = new JLabel("anna pari -- ");
 
         JTextField vastausKentta = new JTextField();
-        container.add(vastausKentta);
-        JButton menikoOikein = new JButton("Seuraava");
-        HarjoituksenLogiikka harjkuuntelija = new HarjoituksenLogiikka(tiedostonimi, vastausKentta);
-        menikoOikein.addActionListener(harjkuuntelija);
+        JButton vastaa = new JButton("Seuraava");
+        HarjoituksenLogiikka harjkuuntelija = new HarjoituksenLogiikka(tiedostonimi, kysymys, vastausKentta);
+        vastaa.addActionListener(harjkuuntelija);
         // tapahtumankuuntelija
-
-
-
+        container.add(kysymys);
+        container.add(vastausKentta);
         container.add(new JLabel(""));
-        container.add(menikoOikein);
+        container.add(vastaa);
 
     }
 

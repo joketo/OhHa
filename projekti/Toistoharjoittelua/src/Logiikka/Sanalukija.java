@@ -20,11 +20,18 @@ public class Sanalukija {
 
     Sanaparit sanastot;
     private File tiedosto;
-
+/**
+ * asettaa this.tiedostonsa parametrina saaduksi tiedostoksi
+ * @param tiedosto 
+ */
     public Sanalukija(File tiedosto) {
-        this.tiedosto = tiedosto;    //jossain kohtaa tiedoston luonti ei onnistu
+        this.tiedosto = tiedosto;
     }
-
+/**
+ * luo HashMapin tiedoston sanoista. joka toisen rivin sana on avain, joka toinen arvo
+ * @param tiedosto
+ * @return 
+ */
     private HashMap<String, String> luoSanasto1To2HashMap(File tiedosto) {
         HashMap<String, String> sanasto1To2 = new HashMap<String, String>();
         try {
@@ -39,7 +46,11 @@ public class Sanalukija {
             return sanasto1To2;   //johanna huom! muista käsitellä tämä mahdollisuus, että mappi onkin tyhjä
         }
     }
-
+/**
+ * luo HashMapin tiedoston sanoista. nyt arvoina onkin äskeisen avaimet ja toistepäin
+ * @param tiedosto
+ * @return 
+ */
     private HashMap<String, String> luoSanasto2To1HashMap(File tiedosto) {
         HashMap<String, String> sanasto2To1 = new HashMap<String, String>();
         try {

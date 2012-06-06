@@ -44,7 +44,10 @@ public class KokeenKayttoliittyma implements Runnable {
         frame.pack();
         frame.setVisible(true);
     }
-
+/**
+ * Luo ikkunan komponentit ja tapahtumankuuntelijan(/t)
+ * @param container 
+ */
     private void luoKomponentit(Container container) {
         GridLayout layout = new GridLayout(2, 2);
         container.setLayout(layout);

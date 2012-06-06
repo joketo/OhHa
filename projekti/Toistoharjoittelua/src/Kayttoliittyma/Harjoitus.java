@@ -20,12 +20,17 @@ import javax.swing.SwingUtilities;
 public class Harjoitus implements ActionListener {
 
     String tiedostonnimi;
-
+    /**
+     * asettaa tiedostonnimen saamakseen nimeksi
+     * @param tiedostonimi 
+     */
     public Harjoitus(String tiedostonimi) {
-
         this.tiedostonnimi = tiedostonimi;
     }
-
+/**
+ * käynnistää graaffisen käyttöliittymän harjoitukselle
+ * @param ae 
+ */
     @Override
     public void actionPerformed(ActionEvent ae) {
         HarjoitusKayttoliittyma kayttoliittyma = new HarjoitusKayttoliittyma(tiedostonnimi);
