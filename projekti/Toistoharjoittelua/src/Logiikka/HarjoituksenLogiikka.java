@@ -114,7 +114,7 @@ public class HarjoituksenLogiikka implements ActionListener {
         }
 
         if (kysyttavat.isEmpty()) {
-            System.out.println("Harjoitus on ohi");
+            System.out.println("Harjoitus on ohi"); //jotenkin lopetus
             return;
         }
         kysySana();

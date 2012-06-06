@@ -10,6 +10,7 @@ package Kayttoliittyma;
  * En tiedä miten tätä voisi testata.
  * @author johanna
  */
+import Logiikka.KokeenLogiikka;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -26,10 +27,12 @@ public class KokeenKayttoliittyma implements Runnable {
     private JFrame frame;
     private Sanalukija sanalukija;
     private Sanaparit sanaparit;
+    private String tiedostonimi;
 
     public KokeenKayttoliittyma(String tiedostonnimi) {
         sanalukija = new Sanalukija(new File(tiedostonnimi)); // ei varmaan näitä tänne
        sanaparit = sanalukija.luoSanaparitOlio();
+       this.tiedostonimi = tiedostonnimi;
     }
 
     @Override
@@ -52,18 +55,19 @@ public class KokeenKayttoliittyma implements Runnable {
         GridLayout layout = new GridLayout(2, 2);
         container.setLayout(layout);
 
-        JLabel teksti = new JLabel("anna pari -- ");
-        container.add(teksti);
+        JLabel kysymys = new JLabel("anna pari -- ");
+        container.add(kysymys);
 
         JTextField vastausKentta = new JTextField();
 
-        JButton menikoOikein = new JButton("Seuraava");
-        // tapahtumankuuntelija
+        JButton vastaa = new JButton("Seuraava");
+        KokeenLogiikka harjkuuntelija = new KokeenLogiikka(tiedostonimi, kysymys, vastausKentta);
+        vastaa.addActionListener(harjkuuntelija);
 
 
         container.add(vastausKentta);
         container.add(new JLabel(""));
-        container.add(menikoOikein);
+        container.add(vastaa);
     }
 
     public JFrame getFrame() {
