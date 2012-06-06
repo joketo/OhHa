@@ -40,32 +40,33 @@ public class HarjoituksenLogiikka implements ActionListener {
         return kysyttavat;
     }
 
-    public void kysyUusiSana() {
-        if (oikeinMenneet >= sanasto.size()) {
-            return;
-        } else {
-            System.out.println("Anna pari: "
-                    + getKysyttavat().get(kysytytSanat.size()));
-        }
+    public void kysyUusiSana() {        
+        String kysyttava =getKysyttavat().get(kysytytSanat.size());
+        System.out.println("Anna pari: "+ kysyttava);
+        kysytytSanat.add(kysyttava);
+        
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         kVastaus = this.kayttajanVastaus.getText();
-        System.out.println(kVastaus);
+       // System.out.println(kVastaus);
 
-       // if (oikeinMenneet >= sanasto.size()) {
-         //   System.out.println("Harjoitus on ohi");
-       // } else {
-          //  if (kysytytSanat.isEmpty()) {
-          //      System.out.println("testi");
-          //      kysyUusiSana();
-          //  } else {
-          //      if (kVastaus.equals("")) { // tänne: jos OIKEIN
-         //           oikeinMenneet++;
-         //           kysyUusiSana();
-         //       }
-        //    }
-        //}
+        if (oikeinMenneet >= sanasto.size()) {
+            System.out.println("Harjoitus on ohi");
+        } else {
+            System.out.println("tämä ei nyt toimi");
+            if (kysytytSanat.isEmpty()) {
+                
+                System.out.println("testi");
+                kysyUusiSana();
+            } else {
+                if (sanaparit.onkoParitSanasto1To2(getKysyttavat().get(kysytytSanat.size()), kVastaus)) { // tänne: jos OIKEIN
+                    oikeinMenneet++;
+                    System.out.println("pääsit tänne asti");
+                    kysyUusiSana();
+                }
+            }
+        }
     }
 }
