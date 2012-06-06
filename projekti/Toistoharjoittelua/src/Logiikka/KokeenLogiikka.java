@@ -106,13 +106,11 @@ public class KokeenLogiikka implements ActionListener{
             kysyttavat.remove(nykyinen);
         } else {
             kysyttavat.remove(nykyinen);
-            System.out.println("väärin");
-            
+            System.out.println("väärin");            
         }
         
-
         if (kysyttavat.isEmpty()) {
-            System.out.println("Koe on ohi, pisteesi: " + this.oikeinMenneet +"/"+kysyttavat.size()); //pisteet, lopetus
+            System.out.println("Koe on ohi, pisteesi: " + this.oikeinMenneet +"/"+this.listanKokoAlussa); //pisteet, lopetus
             return;
         }
         kysySana();
