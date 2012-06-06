@@ -93,7 +93,7 @@ public class HarjoituksenLogiikkaTest {
         System.out.println("kysySana");
         HarjoituksenLogiikka instance = logiikka;
         instance.kysySana();
-        assertEquals(kysymys, "Anna pari: kala");
+        assertEquals(kysymys.getText(), "leipä");
     }
 
     /**
