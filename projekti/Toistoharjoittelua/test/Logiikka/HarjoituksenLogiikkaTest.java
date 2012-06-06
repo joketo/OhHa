@@ -78,12 +78,11 @@ public class HarjoituksenLogiikkaTest {
     @Test
     public void testGetNykyinen() {
         System.out.println("getNykyinen");
-        HarjoituksenLogiikka instance = null;
+        HarjoituksenLogiikka instance = logiikka;
         int expResult = 0;
         int result = instance.getNykyinen();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -92,10 +91,9 @@ public class HarjoituksenLogiikkaTest {
     @Test
     public void testKysySana() {
         System.out.println("kysySana");
-        HarjoituksenLogiikka instance = null;
+        HarjoituksenLogiikka instance = logiikka;
         instance.kysySana();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(kysymys, "Anna pari: kala");
     }
 
     /**
@@ -104,13 +102,22 @@ public class HarjoituksenLogiikkaTest {
     @Test
     public void testTarkista() {
         System.out.println("tarkista");
-        String vastaus = "";
-        HarjoituksenLogiikka instance = null;
+        String vastaus = "lol";
+        HarjoituksenLogiikka instance = logiikka;
         boolean expResult = false;
         boolean result = instance.tarkista(vastaus);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+    }
+    @Test
+    public void testTarkista2() {
+        System.out.println("tarkista");
+        String vastaus = "bread";
+        HarjoituksenLogiikka instance = logiikka;
+        boolean expResult = true;
+        boolean result = instance.tarkista(vastaus);
+        assertEquals(expResult, result);
+        
     }
 
     /**
