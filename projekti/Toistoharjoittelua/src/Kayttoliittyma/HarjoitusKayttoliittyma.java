@@ -4,6 +4,7 @@ package Kayttoliittyma;
  * To change this template, choose Tools | Templates and open the template in
  * the editor.
  */
+import Logiikka.HarjoituksenLogiikka;
 import Logiikka.Sanalukija;
 import Logiikka.Sanaparit;
 import java.awt.Container;
@@ -17,8 +18,9 @@ import java.io.File;
 
 /**
  * Tämä luokka huolehtii harjoituksen graafisesta ulkoasusta. Nappien taakse on
- * kätketty toimintaa, joka tapahtuu logiikka-pakkauksen luokissa.
- * En tiedä miten tätä voisi testata.
+ * kätketty toimintaa, joka tapahtuu logiikka-pakkauksen luokissa. En tiedä
+ * miten tätä voisi testata.
+ *
  * @author johanna
  */
 public class HarjoitusKayttoliittyma implements Runnable {
@@ -26,10 +28,12 @@ public class HarjoitusKayttoliittyma implements Runnable {
     private JFrame frame;
     private Sanalukija sanalukija;
     private Sanaparit sanaparit;
+    private String tiedostonimi;
 
     public HarjoitusKayttoliittyma(String tiedostonnimi) {
         sanalukija = new Sanalukija(new File(tiedostonnimi)); //näitä ei välttämättä tarvita täällä ollenkaan
         sanaparit = sanalukija.luoSanaparitOlio(); //vaan vasta logiikassa
+        this.tiedostonimi = tiedostonnimi;
     }
 
     @Override
@@ -50,16 +54,18 @@ public class HarjoitusKayttoliittyma implements Runnable {
         GridLayout layout = new GridLayout(2, 2);
         container.setLayout(layout);
 
-        JLabel teksti = new JLabel("anna pari -- ");
+        JLabel teksti = new JLabel("anna pari -- "); //erillinen kuuntelija, joka seuraa harjoituksenlogiikkaa ja antaa tähän aina sanan?
         container.add(teksti);
 
         JTextField vastausKentta = new JTextField();
-
-        JButton menikoOikein = new JButton("Tarkista");
+        container.add(vastausKentta);
+        JButton menikoOikein = new JButton("Seuraava");
+        HarjoituksenLogiikka harjkuuntelija = new HarjoituksenLogiikka(tiedostonimi, vastausKentta);
+        menikoOikein.addActionListener(harjkuuntelija);
         // tapahtumankuuntelija
 
 
-        container.add(vastausKentta);
+
         container.add(new JLabel(""));
         container.add(menikoOikein);
 
