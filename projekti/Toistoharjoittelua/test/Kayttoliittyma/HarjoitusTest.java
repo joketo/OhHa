@@ -4,6 +4,7 @@
  */
 package Kayttoliittyma;
 
+import Logiikka.Harjoitus;
 import java.awt.event.ActionEvent;
 import org.junit.*;
 import static org.junit.Assert.*;

@@ -1,10 +1,8 @@
-package Kayttoliittyma;
+package Logiikka;
 
-import Logiikka.Sanalukija;
-import Logiikka.Sanaparit;
+import Kayttoliittyma.HarjoitusKayttoliittyma;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import javax.swing.SwingUtilities;
 
 /*
