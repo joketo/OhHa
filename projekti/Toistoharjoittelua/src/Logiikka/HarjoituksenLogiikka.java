@@ -42,8 +42,8 @@ public class HarjoituksenLogiikka implements ActionListener {
         this.sanaparit = sanalukija.luoSanaparitOlio();
         this.kysymys = kysymys;
         this.sanasto = sanaparit.getSanasto1To2();
-
-        kysyttavat = new ArrayList<String>(sanasto.keySet());
+        this.kysyttavat = new ArrayList<String>(sanasto.keySet());
+        
         kysySana();
 
     }
