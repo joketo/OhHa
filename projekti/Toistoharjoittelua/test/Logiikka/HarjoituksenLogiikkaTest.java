@@ -4,7 +4,7 @@
  */
 package Logiikka;
 
-import Kayttoliittyma.HarjoituksenLogiikka;
+import Kayttoliittyma.HarjoitusKuuntelija;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  */
 public class HarjoituksenLogiikkaTest {
     Sanaparit sanaparit;
-    HarjoituksenLogiikka logiikka;
+    HarjoitusKuuntelija logiikka;
     private JLabel kysymys;
     private JTextField kayttajanVastaus;
     HashMap<String, String> sanasto1To2;
@@ -41,18 +41,18 @@ public class HarjoituksenLogiikkaTest {
         kysymys.setText("testaus");
         kayttajanVastaus.setText("toinentest");
         sanaparit = new Sanaparit(sanasto1To2, sanasto2To1);
-        logiikka = new HarjoituksenLogiikka("testikoe", kysymys, kayttajanVastaus);
+        logiikka = new HarjoitusKuuntelija("testikoe", kysymys, kayttajanVastaus);
     }
     
     
 
     /**
-     * Test of getSanaparit method, of class HarjoituksenLogiikka.
+     * Test of getSanaparit method, of class HarjoitusKuuntelija.
      */
     @Test
     public void testGetSanaparit() {
         System.out.println("getSanaparit");
-        HarjoituksenLogiikka instance = logiikka;
+        HarjoitusKuuntelija instance = logiikka;
         HashMap<String, String> expResult = sanasto1To2;
         HashMap<String, String> result = instance.getSanaparit().getSanasto1To2();
         assertEquals(expResult, result);
@@ -60,12 +60,12 @@ public class HarjoituksenLogiikkaTest {
     }
 
     /**
-     * Test of getKysyttavat method, of class HarjoituksenLogiikka.
+     * Test of getKysyttavat method, of class HarjoitusKuuntelija.
      */
     @Test
     public void testGetKysyttavat() {
         System.out.println("getKysyttavat");
-        HarjoituksenLogiikka instance = null;
+        HarjoitusKuuntelija instance = null;
         ArrayList expResult = null;
         ArrayList result = instance.getKysyttavat();
         assertEquals(expResult, result);
@@ -74,12 +74,12 @@ public class HarjoituksenLogiikkaTest {
     }
 
     /**
-     * Test of getNykyinen method, of class HarjoituksenLogiikka.
+     * Test of getNykyinen method, of class HarjoitusKuuntelija.
      */
     @Test
     public void testGetNykyinen() {
         System.out.println("getNykyinen");
-        HarjoituksenLogiikka instance = logiikka;
+        HarjoitusKuuntelija instance = logiikka;
         int expResult = 0;
         int result = instance.getNykyinen();
         assertEquals(expResult, result);
@@ -87,24 +87,24 @@ public class HarjoituksenLogiikkaTest {
     }
 
     /**
-     * Test of kysySana method, of class HarjoituksenLogiikka.
+     * Test of kysySana method, of class HarjoitusKuuntelija.
      */
     @Test
     public void testKysySana() {
         System.out.println("kysySana");
-        HarjoituksenLogiikka instance = logiikka;
+        HarjoitusKuuntelija instance = logiikka;
         instance.kysySana();
         assertEquals(kysymys.getText(), "leipä");
     }
 
     /**
-     * Test of tarkista method, of class HarjoituksenLogiikka.
+     * Test of tarkista method, of class HarjoitusKuuntelija.
      */
     @Test
     public void testTarkista() {
         System.out.println("tarkista");
         String vastaus = "lol";
-        HarjoituksenLogiikka instance = logiikka;
+        HarjoitusKuuntelija instance = logiikka;
         boolean expResult = false;
         boolean result = instance.tarkista(vastaus);
         assertEquals(expResult, result);
@@ -114,7 +114,7 @@ public class HarjoituksenLogiikkaTest {
     public void testTarkista2() {
         System.out.println("tarkista");
         String vastaus = "bread";
-        HarjoituksenLogiikka instance = logiikka;
+        HarjoitusKuuntelija instance = logiikka;
         boolean expResult = true;
         boolean result = instance.tarkista(vastaus);
         assertEquals(expResult, result);
@@ -122,13 +122,13 @@ public class HarjoituksenLogiikkaTest {
     }
 
     /**
-     * Test of actionPerformed method, of class HarjoituksenLogiikka.
+     * Test of actionPerformed method, of class HarjoitusKuuntelija.
      */
     @Test
     public void testActionPerformed() {
         System.out.println("actionPerformed");
         ActionEvent ae = null;
-        HarjoituksenLogiikka instance = null;
+        HarjoitusKuuntelija instance = null;
         instance.actionPerformed(ae);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
