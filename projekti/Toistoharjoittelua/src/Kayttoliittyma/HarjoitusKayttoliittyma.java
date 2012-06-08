@@ -4,7 +4,6 @@ package Kayttoliittyma;
  * To change this template, choose Tools | Templates and open the template in
  * the editor.
  */
-import Logiikka.HarjoituksenLogiikka;
 import Logiikka.Sanalukija;
 import Logiikka.Sanaparit;
 import java.awt.Container;

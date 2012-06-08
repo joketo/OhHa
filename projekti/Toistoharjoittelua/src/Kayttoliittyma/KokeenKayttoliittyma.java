@@ -10,7 +10,6 @@ package Kayttoliittyma;
  * En tiedä miten tätä voisi testata.
  * @author johanna
  */
-import Logiikka.KokeenLogiikka;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;

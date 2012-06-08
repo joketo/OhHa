@@ -4,6 +4,7 @@
  */
 package Logiikka;
 
+import Kayttoliittyma.HarjoituksenLogiikka;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.HashMap;

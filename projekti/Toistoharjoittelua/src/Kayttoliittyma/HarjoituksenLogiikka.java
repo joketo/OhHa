@@ -2,8 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Logiikka;
-import Kayttoliittyma.KokeenKayttoliittyma;
+package Kayttoliittyma;
+
+import Kayttoliittyma.HarjoitusKayttoliittyma;
+import Logiikka.Sanalukija;
+import Logiikka.Sanaparit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -13,11 +16,12 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
- *Tekee paljolti samaa kuin harjoituksenLogiikka. Erona se, ettei väärinmenneitä sanoja kysytä uudestaan.
+ * "logiikka" on oikeastaan tapahtumankuuntelija, joka kysyy sanoja ja tarkistaa vastauksen
  * @author johanna
  */
-public class KokeenLogiikka implements ActionListener{
-  
+
+public class HarjoituksenLogiikka implements ActionListener {
+
     private JTextField kayttajanVastaus;
     private JLabel kysymys;
     private String kVastaus;
@@ -28,21 +32,20 @@ public class KokeenLogiikka implements ActionListener{
     private Sanaparit sanaparit;
     private HashMap<String, String> sanasto;
     private ArrayList<String> kysyttavat;
-    private int listanKokoAlussa;
     /**
      * konstruktori luo sopivan harjoituksen ja kysyy ensimmäisen kysymyksen
      * @param tiedostonimi
      * @param kysymys
      * @param kayttajanVastaus 
      */
-    public KokeenLogiikka(String tiedostonimi, JLabel kysymys, JTextField kayttajanVastaus) {
+    public HarjoituksenLogiikka(String tiedostonimi, JLabel kysymys, JTextField kayttajanVastaus) {
         this.kayttajanVastaus = kayttajanVastaus;
         this.sanalukija = new Sanalukija(new File(tiedostonimi));
         this.sanaparit = sanalukija.luoSanaparitOlio();
         this.kysymys = kysymys;
         this.sanasto = sanaparit.getSanasto1To2();
-        kysyttavat = new ArrayList<String>(sanasto.keySet());
-        this.listanKokoAlussa = kysyttavat.size();
+        this.kysyttavat = new ArrayList<String>(sanasto.keySet());
+        
         kysySana();
 
     }
@@ -76,7 +79,7 @@ public class KokeenLogiikka implements ActionListener{
         String kysyttava = kysyttavat.get(nykyinen);
         kysyttykpl++;
         System.out.println("Anna pari: " + kysyttava);
-        kysymys.setText("Anna pari: " + kysyttava);
+        kysymys.setText(kysyttava);
     }
     /**
      * tarkistaa onko vastaus oikein
@@ -97,24 +100,27 @@ public class KokeenLogiikka implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        System.out.println("nyk: " + nykyinen + " jaljella: " + (kysyttavat.size()-1));
+        System.out.println("nyk: " + nykyinen + " jaljella: " + kysyttavat.size());
         kVastaus = this.kayttajanVastaus.getText();
 
         if (tarkista(kVastaus)) {
             System.out.println("oikein");
-            oikeinMenneet++;
             kysyttavat.remove(nykyinen);
         } else {
-            kysyttavat.remove(nykyinen);
-            System.out.println("väärin");            
+            System.out.println("väärin");
+            nykyinen++;
         }
         
+        if (kysyttavat.size() <= nykyinen) {
+            nykyinen = 0;
+        }
+
         if (kysyttavat.isEmpty()) {
-            System.out.println("Koe on ohi, pisteesi: " + this.oikeinMenneet +"/"+this.listanKokoAlussa); //pisteet, lopetus
+            System.out.println("Harjoitus on ohi"); //jotenkin lopetus
             return;
         }
         kysySana();
+
         kayttajanVastaus.setText("");
     }
 }
-
