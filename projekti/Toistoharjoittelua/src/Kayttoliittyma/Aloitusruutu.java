@@ -46,6 +46,9 @@ public class Aloitusruutu implements Runnable {
      */
 
     private void luoKomponentit(Container container) {
+       // final JFileChooser fc = new JFileChooser(); tänne rakennetaan tiedostonvalintasysteemiä
+       // int returnVal = fc.showOpenDialog(aComponent);
+
         JLabel tiedosto = new JLabel("Anna tiedosto");
         String nimi = "testikoe";
         JLabel teksti = new JLabel("   Aloitetaanpa! Tahdotko harjoitella vai suorittaa kokeen?");
