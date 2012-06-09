@@ -33,12 +33,13 @@ public class Sanankyselija {
         this.sanasto = sanaparit.getSanasto1To2();
         this.kysyttavat = new ArrayList<String>(sanasto.keySet());
         
-        kysySana();
+       // kysySana();
     }
     public void kysySana() {
         String kysyttava = kysyttavat.get(nykyinen);
         kysyttykpl++;
         System.out.println("Anna pari: " + kysyttava);
+        System.out.println("(oikea pari " + sanaparit.getPariSanasto1To2(kysyttava)+")");
         kysymys = kysyttava; //kysymys.setText(kysyttava);
     }
     public String getAsetettavaTeksti(){
@@ -60,7 +61,8 @@ public class Sanankyselija {
     public boolean onkoLoppu(){
         return onkoLoppu;
     }
-     public boolean tarkistaJaEtene() {
+     public boolean tarkistaJaEtene(String vastaus) {
+         this.kayttajanVastaus= vastaus;
         System.out.println("nyk: " + nykyinen + " jaljella: " + kysyttavat.size());
         boolean oikeinVaiVaarin = onkoOikein(kayttajanVastaus);
         if (oikeinVaiVaarin) {

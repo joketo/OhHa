@@ -18,7 +18,7 @@ import javax.swing.JTextField;
  *Tekee paljolti samaa kuin harjoituksenLogiikka. Erona se, ettei väärinmenneitä sanoja kysytä uudestaan.
  * @author johanna
  */
-public class KokeenLogiikka implements ActionListener{
+public class KokeenKuuntelija implements ActionListener{
   
     private JTextField kayttajanVastaus;
     private JLabel kysymys;
@@ -37,7 +37,7 @@ public class KokeenLogiikka implements ActionListener{
      * @param kysymys
      * @param kayttajanVastaus 
      */
-    public KokeenLogiikka(String tiedostonimi, JLabel kysymys, JTextField kayttajanVastaus) {
+    public KokeenKuuntelija(String tiedostonimi, JLabel kysymys, JTextField kayttajanVastaus) {
         this.kayttajanVastaus = kayttajanVastaus;
         this.sanalukija = new Sanalukija(new File(tiedostonimi));
         this.sanaparit = sanalukija.luoSanaparitOlio();

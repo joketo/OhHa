@@ -59,7 +59,7 @@ public class HarjoitusKuuntelija implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         this.kVastaus = this.kayttajanVastaus.getText();
-        if(sanankyselija.tarkistaJaEtene()){
+        if(sanankyselija.tarkistaJaEtene(kVastaus)){
             this.oikeinVaarin.setText("oikein");
         }else{
             this.oikeinVaarin.setText("väärin");
