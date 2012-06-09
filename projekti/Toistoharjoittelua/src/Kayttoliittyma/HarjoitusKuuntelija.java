@@ -4,15 +4,9 @@
  */
 package Kayttoliittyma;
 
-import Kayttoliittyma.HarjoitusKayttoliittyma;
-import Logiikka.Sanalukija;
 import Logiikka.Sanankyselija;
-import Logiikka.Sanaparit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -25,17 +19,8 @@ public class HarjoitusKuuntelija implements ActionListener {
 
     private JTextField kayttajanVastaus;
     private JLabel kysymys;
-    private String kVastaus;
-    private int oikeinMenneet;
-    private int nykyinen = 0;
-    private int kysyttykpl = 0;
-    private Sanalukija sanalukija;
-    private Sanaparit sanaparit;
-    private HashMap<String, String> sanasto;
-    private ArrayList<String> kysyttavat;
-    
-    private JLabel oikeinVaarin;
-    
+    private String kVastaus;   
+    private JLabel oikeinVaarin;    
     Sanankyselija sanankyselija;
     /**
      * konstruktori luo sopivan harjoituksen ja kysyy ensimmäisen kysymyksen
@@ -48,6 +33,7 @@ public class HarjoitusKuuntelija implements ActionListener {
         this.kysymys = kysymys;
         this.oikeinVaarin = oikeinVaarin;
         sanankyselija = new Sanankyselija(this.kayttajanVastaus.getText(), tiedostonimi);
+        
         sanankyselija.kysySana();
         this.kysymys.setText(sanankyselija.getAsetettavaTeksti());
     }

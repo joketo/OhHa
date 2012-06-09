@@ -18,7 +18,6 @@ public class Sanankyselija {
     
     private String kayttajanVastaus;
     private String kysymys;
-    private int oikeinMenneet;
     private int nykyinen = 0;
     private int kysyttykpl = 0;
     private Sanalukija sanalukija;
