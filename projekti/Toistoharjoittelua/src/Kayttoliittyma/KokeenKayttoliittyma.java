@@ -60,8 +60,8 @@ public class KokeenKayttoliittyma implements Runnable {
         JTextField vastausKentta = new JTextField();
 
         JButton vastaa = new JButton("Seuraava");
-        KokeenKuuntelija harjkuuntelija = new KokeenKuuntelija(tiedostonimi, kysymys, vastausKentta);
-        vastaa.addActionListener(harjkuuntelija);
+        KokeenKuuntelija koekuuntelija = new KokeenKuuntelija(tiedostonimi, kysymys, vastausKentta);
+        vastaa.addActionListener(koekuuntelija);
 
 
         container.add(vastausKentta);

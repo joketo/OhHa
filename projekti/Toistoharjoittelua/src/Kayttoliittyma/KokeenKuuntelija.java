@@ -4,6 +4,7 @@
  */
 package Kayttoliittyma;
 import Kayttoliittyma.KokeenKayttoliittyma;
+import Logiikka.KokeenLogiikka;
 import Logiikka.Sanalukija;
 import Logiikka.Sanaparit;
 import java.awt.event.ActionEvent;
@@ -22,15 +23,9 @@ public class KokeenKuuntelija implements ActionListener{
   
     private JTextField kayttajanVastaus;
     private JLabel kysymys;
-    private String kVastaus;
-    private int oikeinMenneet;
-    private int nykyinen = 0;
-    private int kysyttykpl = 0;
-    private Sanalukija sanalukija;
-    private Sanaparit sanaparit;
-    private HashMap<String, String> sanasto;
-    private ArrayList<String> kysyttavat;
-    private int listanKokoAlussa;
+    private String kVastaus;   
+       
+    KokeenLogiikka kokeenLogiikka;
     /**
      * konstruktori luo sopivan harjoituksen ja kysyy ensimmäisen kysymyksen
      * @param tiedostonimi
@@ -39,59 +34,13 @@ public class KokeenKuuntelija implements ActionListener{
      */
     public KokeenKuuntelija(String tiedostonimi, JLabel kysymys, JTextField kayttajanVastaus) {
         this.kayttajanVastaus = kayttajanVastaus;
-        this.sanalukija = new Sanalukija(new File(tiedostonimi));
-        this.sanaparit = sanalukija.luoSanaparitOlio();
         this.kysymys = kysymys;
-        this.sanasto = sanaparit.getSanasto1To2();
-        kysyttavat = new ArrayList<String>(sanasto.keySet());
-        this.listanKokoAlussa = kysyttavat.size();
-        kysySana();
+        kokeenLogiikka = new KokeenLogiikka(tiedostonimi);
+        
+        kokeenLogiikka.kysySana();
 
     }
-    /**
-     * palauttaa sanaparit-olion
-     * @return 
-     */
-    public Sanaparit getSanaparit() {
-        return sanaparit;
-    }
-/**
- * palauttaa listan kaikista kysyttävistä sanoista
- * 
- * @return 
- */
-    public ArrayList<String> getKysyttavat() {
-        return kysyttavat;
-    }
-/**
- * palauttaa tämänhetkisen sanan
- * @return 
- */
-    public int getNykyinen() {
-        return nykyinen;
-    }
-    /**
-     * metodi kysyy sanan paria
-     */
 
-    public void kysySana() {
-        String kysyttava = kysyttavat.get(nykyinen);
-        kysyttykpl++;
-        System.out.println("Anna pari: " + kysyttava);
-        kysymys.setText("Anna pari: " + kysyttava);
-    }
-    /**
-     * tarkistaa onko vastaus oikein
-     * @param vastaus
-     * @return 
-     */
-    public boolean tarkista(String vastaus) {
-        if (sanaparit.onkoParitSanasto1To2(kysyttavat.get(nykyinen), vastaus)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
     /**
      * metodi tarkistaa annetun vastauksen ja siirtyy seuraavaan kysymykseen tai lopettaa
      * @param ae 
@@ -99,23 +48,12 @@ public class KokeenKuuntelija implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        System.out.println("nyk: " + nykyinen + " jaljella: " + (kysyttavat.size()-1));
-        kVastaus = this.kayttajanVastaus.getText();
-
-        if (tarkista(kVastaus)) {
-            System.out.println("oikein");
-            oikeinMenneet++;
-            kysyttavat.remove(nykyinen);
-        } else {
-            kysyttavat.remove(nykyinen);
-            System.out.println("väärin");            
-        }
         
-        if (kysyttavat.isEmpty()) {
-            System.out.println("Koe on ohi, pisteesi: " + this.oikeinMenneet +"/"+this.listanKokoAlussa); //pisteet, lopetus
-            return;
-        }
-        kysySana();
+        kVastaus = this.kayttajanVastaus.getText();
+        kokeenLogiikka.tarkistaJaEtene(kVastaus);
+        
+        kysymys.setText(kokeenLogiikka.getAsetettavaTeksti());
+        
         kayttajanVastaus.setText("");
     }
 }
