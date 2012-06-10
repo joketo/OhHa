@@ -66,7 +66,9 @@ public abstract class Sanankyselija {
     public boolean tarkistaJaEtene(String vastaus) {
         System.out.println("nyk: " + nykyinen + " jaljella: " + (kysyttavat.size() - 1));
         boolean oikeinVaiVaarin = onkoOikein(vastaus);
+        if (!kysyttavat.isEmpty()) {
         etene(oikeinVaiVaarin);
+        }
         return (oikeinVaiVaarin);
     }
 

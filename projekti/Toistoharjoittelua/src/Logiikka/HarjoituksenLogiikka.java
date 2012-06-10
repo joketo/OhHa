@@ -30,7 +30,8 @@ public class HarjoituksenLogiikka extends Sanankyselija {
         if (kysyttavat.isEmpty()) {
             onkoLoppu = true; //jotenkin lopetus
 
+        } else {
+            kysySana();
         }
-        kysySana();
     }
 }

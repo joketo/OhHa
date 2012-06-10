@@ -3,6 +3,7 @@ package Logiikka;
 import Kayttoliittyma.HarjoitusKayttoliittyma;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 /*
@@ -18,12 +19,14 @@ import javax.swing.SwingUtilities;
 public class Harjoitus implements ActionListener {
 
     String tiedostonnimi;
+    private JFrame frame;
     /**
      * asettaa tiedostonnimen saamakseen nimeksi
      * @param tiedostonimi 
      */
-    public Harjoitus(String tiedostonimi) {
+    public Harjoitus(String tiedostonimi, JFrame frame) {
         this.tiedostonnimi = tiedostonimi;
+        this.frame = frame;
     }
 /**
  * käynnistää graaffisen käyttöliittymän harjoitukselle
@@ -33,6 +36,6 @@ public class Harjoitus implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         HarjoitusKayttoliittyma kayttoliittyma = new HarjoitusKayttoliittyma(tiedostonnimi);
         SwingUtilities.invokeLater(kayttoliittyma);
-
+       // frame.dispose();
     }
 }

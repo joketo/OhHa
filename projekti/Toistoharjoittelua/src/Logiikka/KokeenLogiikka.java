@@ -13,6 +13,9 @@ public class KokeenLogiikka extends Sanankyselija{
     public KokeenLogiikka(String tiedostonimi) {
         super(tiedostonimi);
     }
+    public String getLopetusViesti(){
+        return "Koe on ohi, pisteesi: "+oikeinMenneet+"/"+ sanojenMaaraAlussa;
+    }
 
     public void etene(boolean olikoOikein) {
         if (olikoOikein) {
@@ -27,8 +30,9 @@ public class KokeenLogiikka extends Sanankyselija{
             System.out.println("Koe on ohi, pisteesi: "+oikeinMenneet+"/"+ sanojenMaaraAlussa);
             onkoLoppu = true; //jotenkin lopetus
 
-        }
+        }else{
         kysySana();
+        }
     }
 }
     

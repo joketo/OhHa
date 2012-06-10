@@ -61,7 +61,7 @@ public class HarjoitusKayttoliittyma implements Runnable {
         JLabel oikeinVaiVaarin = new JLabel();
         JTextField vastausKentta = new JTextField();
         JButton vastaa = new JButton("Seuraava");
-        HarjoitusKuuntelija harjkuuntelija = new HarjoitusKuuntelija(tiedostonimi, kysymys, vastausKentta, oikeinVaiVaarin);
+        HarjoitusKuuntelija harjkuuntelija = new HarjoitusKuuntelija(tiedostonimi, kysymys, vastausKentta, oikeinVaiVaarin, frame);
         vastaa.addActionListener(harjkuuntelija);
         // tapahtumankuuntelija
         container.add(kysymys);
