@@ -16,6 +16,7 @@ public abstract class Sanankyselija {
 
     private String kysymys;
     protected int nykyinen = 0;
+    protected int sanojenMaaraAlussa;
     private int kysyttykpl = 0;
     private Sanalukija sanalukija;
     private Sanaparit sanaparit;
@@ -28,7 +29,7 @@ public abstract class Sanankyselija {
         this.sanaparit = sanalukija.luoSanaparitOlio();
         this.sanasto = sanaparit.getSanasto1To2();
         this.kysyttavat = new ArrayList<String>(sanasto.keySet());
-
+        this.sanojenMaaraAlussa =kysyttavat.size();
         // kysySana();
     }
 

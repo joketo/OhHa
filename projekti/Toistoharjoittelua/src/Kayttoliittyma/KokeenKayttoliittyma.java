@@ -54,7 +54,7 @@ public class KokeenKayttoliittyma implements Runnable {
         GridLayout layout = new GridLayout(2, 2);
         container.setLayout(layout);
 
-        JLabel kysymys = new JLabel("anna pari -- ");
+        JLabel kysymys = new JLabel();
         container.add(kysymys);
 
         JTextField vastausKentta = new JTextField();

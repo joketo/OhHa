@@ -9,24 +9,22 @@ package Logiikka;
  * @author johanna
  */
 public class KokeenLogiikka extends Sanankyselija{
+    private int oikeinMenneet = 0;
     public KokeenLogiikka(String tiedostonimi) {
         super(tiedostonimi);
     }
 
     public void etene(boolean olikoOikein) {
         if (olikoOikein) {
-            System.out.println("oikein");
+            oikeinMenneet++;
             kysyttavat.remove(nykyinen);
         } else {
             System.out.println("väärin");
             kysyttavat.remove(nykyinen);
         }
 
-       // if (kysyttavat.size() <= nykyinen) {
-       //     nykyinen = 0;
-       // }
-
         if (kysyttavat.isEmpty()) {
+            System.out.println("Koe on ohi, pisteesi: "+oikeinMenneet+"/"+ sanojenMaaraAlussa);
             onkoLoppu = true; //jotenkin lopetus
 
         }

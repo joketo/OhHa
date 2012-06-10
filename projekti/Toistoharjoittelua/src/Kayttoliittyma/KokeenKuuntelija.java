@@ -38,6 +38,7 @@ public class KokeenKuuntelija implements ActionListener{
         kokeenLogiikka = new KokeenLogiikka(tiedostonimi);
         
         kokeenLogiikka.kysySana();
+        this.kysymys.setText(kokeenLogiikka.getAsetettavaTeksti());
 
     }
 
