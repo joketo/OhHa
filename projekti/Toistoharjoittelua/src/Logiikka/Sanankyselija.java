@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Logiikka;
 
 import java.io.File;
@@ -24,7 +21,10 @@ public abstract class Sanankyselija {
     protected ArrayList<String> kysyttavat;
     protected boolean onkoLoppu = false;
     private String oikeaVastaus;
-
+/**
+ * konstruktori
+ * @param tiedostonimi 
+ */
     public Sanankyselija(String tiedostonimi) {
         this.sanalukija = new Sanalukija(new File(tiedostonimi));
         this.sanaparit = sanalukija.luoSanaparitOlio();
@@ -34,7 +34,9 @@ public abstract class Sanankyselija {
         // kysySana();
     }
     
-    
+    /**
+     * kysyy seuraavaa sanaa
+     */
     public void kysySana() {
         String kysyttava = kysyttavat.get(nykyinen);
         kysyttykpl++;
@@ -43,10 +45,17 @@ public abstract class Sanankyselija {
         System.out.println("(oikea pari " + sanaparit.getPariSanasto1To2(kysyttava) + ")");
         kysymys = kysyttava;
     }
-
+    /**
+     * palauttaa kysyttävän sanan stringinä
+     * @return 
+     */
     public String getAsetettavaTeksti() {
         return kysymys;
     }
+    /**
+     * antaa kysytyn sanan oikean parin
+     * @return 
+     */
     public String getOikeaVastaus(){
         return oikeaVastaus;
     }
@@ -64,11 +73,18 @@ public abstract class Sanankyselija {
             return false;
         }
     }
-
+    /**
+     * boolean, onko harjoitus ohi
+     * @return 
+     */
     public boolean onkoLoppu() {
         return onkoLoppu;
     }
-  
+   /**
+    * tarkistaa vastauksen ja etenee
+    * @param vastaus
+    * @return 
+    */
     public boolean tarkistaJaEtene(String vastaus) {
         System.out.println("nyk: " + nykyinen + " jaljella: " + (kysyttavat.size() - 1));
         boolean oikeinVaiVaarin = onkoOikein(vastaus);
@@ -77,6 +93,9 @@ public abstract class Sanankyselija {
         }
         return (oikeinVaiVaarin);
     }
-
+    /**
+     * etenee. Harjoituksen etene-metodin toteutus hieman erilainen kuin kokeen.
+     * @param olikoOikein 
+     */
     protected abstract void etene(boolean olikoOikein);
 }

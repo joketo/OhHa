@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Logiikka;
 
 /**
@@ -20,6 +17,10 @@ public class KokeenLogiikka extends Sanankyselija{
     public String getLopetusViesti(){
         return "Koe on ohi, pisteesi: "+oikeinMenneet+"/"+ sanojenMaaraAlussa;
     }
+    /**
+     * poistaa sanan kysyttävien joukosta, kun se on kerran kysytty. tarkistaa onko kaikki sanat kysytty
+     * @param olikoOikein 
+     */
     @Override
     public void etene(boolean olikoOikein) {
         if (olikoOikein) {

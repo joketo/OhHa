@@ -1,9 +1,5 @@
 package Kayttoliittyma;
 
-/*
- * To change this template, choose Tools | Templates and open the template in
- * the editor.
- */
 /**
  * Tämä luokka huolehtii kokeen graafisesta ulkoasusta. Nappien taakse kätkeytyy
  * toimintaa, joka tapahtuu logiikka-pakkauksen luokissa.

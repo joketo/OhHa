@@ -1,12 +1,9 @@
 package Kayttoliittyma;
 
 
-import Logiikka.Sanalukija;
-import Logiikka.Sanaparit;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.io.File;
 import javax.swing.*;
 
 /**
