@@ -14,14 +14,14 @@ public class HarjoituksenLogiikka extends Sanankyselija {
     @Override
     public void etene(boolean olikoOikein) {
         if (olikoOikein) {
-            System.out.println("oikein");
+            System.out.println("oikein"); //testausta
             kysyttavat.remove(nykyinen);
         } else {
-            System.out.println("väärin");
+            System.out.println("väärin"); //testausta
             nykyinen++;
         }
 
-        if (kysyttavat.size() <= nykyinen) {
+        if (kysyttavat.size() <= nykyinen) { 
             nykyinen = 0;
         }
 

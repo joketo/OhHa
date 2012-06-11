@@ -46,12 +46,12 @@ public class Aloitusruutu implements Runnable {
         JLabel tiedosto = new JLabel("Anna tiedosto");
         String nimi = "testikoe";
         JLabel aloitusTeksti = new JLabel("              Tahdotko harjoitella vai suorittaa kokeen?");
-        
         JButton harjoitella = new JButton("Harjoittele");
         JButton koe = new JButton("Suorita koe");
         container.setLayout(new GridLayout(3,1));
-        KoeNappiKuuntelija koekuuntelija = new KoeNappiKuuntelija(nimi);
-        HarjoitusNappiKuuntelija harjkuuntelija = new HarjoitusNappiKuuntelija(nimi);
+        
+        HarjoitusNappiKuuntelija harjkuuntelija = new HarjoitusNappiKuuntelija(nimi); //harjoittele
+        KoeNappiKuuntelija koekuuntelija = new KoeNappiKuuntelija(nimi); // suorita koe
         koe.addActionListener(koekuuntelija);
         harjoitella.addActionListener(harjkuuntelija);
         container.add(aloitusTeksti);

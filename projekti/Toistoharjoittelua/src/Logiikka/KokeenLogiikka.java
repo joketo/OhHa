@@ -5,7 +5,7 @@
 package Logiikka;
 
 /**
- *
+ * Logiikka perii Sanankyselija-luokan. Kokeen logiikka tapahtuu täällä.
  * @author johanna
  */
 public class KokeenLogiikka extends Sanankyselija{
@@ -13,6 +13,10 @@ public class KokeenLogiikka extends Sanankyselija{
     public KokeenLogiikka(String tiedostonimi) {
         super(tiedostonimi);
     }
+    /**
+     * Kokeen päätyttyä näytettävä lopetusviesti
+     * @return 
+     */
     public String getLopetusViesti(){
         return "Koe on ohi, pisteesi: "+oikeinMenneet+"/"+ sanojenMaaraAlussa;
     }
