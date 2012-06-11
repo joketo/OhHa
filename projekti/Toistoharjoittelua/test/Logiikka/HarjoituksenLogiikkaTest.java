@@ -60,4 +60,17 @@ public class HarjoituksenLogiikkaTest {
         int result = instance.nykyinen;
         assertEquals(expResult, result);
     }
+    @Test
+    public void testMuuttuukoOnkoLoppuArvoJosLoppu(){
+        System.out.println("etene");
+        boolean olikoOikein = true;
+        HarjoituksenLogiikka instance = harjoituksenLogiikka;       
+        instance.etene(olikoOikein);
+        instance.etene(olikoOikein);
+        instance.etene(olikoOikein);
+        instance.etene(olikoOikein);
+        boolean expResult = true;
+        boolean result = instance.onkoLoppu();
+        assertEquals(expResult, result);
+    }
 }
