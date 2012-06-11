@@ -25,7 +25,7 @@ public class Aloitusruutu implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Toistoharjoittelua");
-        frame.setPreferredSize(new Dimension(500, 250));
+        frame.setPreferredSize(new Dimension(400, 250));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,10 +45,10 @@ public class Aloitusruutu implements Runnable {
 
         JLabel tiedosto = new JLabel("Anna tiedosto");
         String nimi = "testikoe";
-        JLabel aloitusTeksti = new JLabel("   Aloitetaanpa! Tahdotko harjoitella vai suorittaa kokeen?");
+        JLabel aloitusTeksti = new JLabel("              Tahdotko harjoitella vai suorittaa kokeen?");
         
-        JButton harjoitella = new JButton("Harjoitella");
-        JButton koe = new JButton("Suorittaa kokeen");
+        JButton harjoitella = new JButton("Harjoittele");
+        JButton koe = new JButton("Suorita koe");
         container.setLayout(new GridLayout(3,1));
         KoeNappiKuuntelija koekuuntelija = new KoeNappiKuuntelija(nimi);
         HarjoitusNappiKuuntelija harjkuuntelija = new HarjoitusNappiKuuntelija(nimi);

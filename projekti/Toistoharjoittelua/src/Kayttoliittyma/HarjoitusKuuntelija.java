@@ -54,11 +54,11 @@ public class HarjoitusKuuntelija implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         this.kVastaus = this.kayttajanVastaus.getText();
-
+        String oikeaVastaus = harjoituksenLogiikka.getOikeaVastaus();
         if (harjoituksenLogiikka.tarkistaJaEtene(kVastaus)) {
             this.oikeinVaarin.setText("                        oikein");
         } else {
-            this.oikeinVaarin.setText("                        väärin");
+            this.oikeinVaarin.setText("väärin, oikea vastaus: " + oikeaVastaus);
         }
         kysymys.setText("Anna pari: " + harjoituksenLogiikka.getAsetettavaTeksti());
         kayttajanVastaus.setText("");

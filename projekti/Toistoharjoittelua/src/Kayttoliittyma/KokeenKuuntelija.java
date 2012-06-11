@@ -37,7 +37,7 @@ public class KokeenKuuntelija implements ActionListener {
         this.frame = frame;
 
         kokeenLogiikka.kysySana();
-        this.kysymys.setText(kokeenLogiikka.getAsetettavaTeksti());
+        this.kysymys.setText("Anna pari: " + kokeenLogiikka.getAsetettavaTeksti());
 
     }
 
@@ -53,7 +53,7 @@ public class KokeenKuuntelija implements ActionListener {
         kVastaus = this.kayttajanVastaus.getText();
         kokeenLogiikka.tarkistaJaEtene(kVastaus);
 
-        kysymys.setText(kokeenLogiikka.getAsetettavaTeksti());
+        kysymys.setText("Anna pari: " + kokeenLogiikka.getAsetettavaTeksti());
 
         kayttajanVastaus.setText("");
         if (kokeenLogiikka.onkoLoppu()) {

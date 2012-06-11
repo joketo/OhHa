@@ -10,7 +10,8 @@ public class HarjoituksenLogiikka extends Sanankyselija {
     public HarjoituksenLogiikka(String tiedostonimi) {
         super(tiedostonimi);
     }
-
+    
+    @Override
     public void etene(boolean olikoOikein) {
         if (olikoOikein) {
             System.out.println("oikein");

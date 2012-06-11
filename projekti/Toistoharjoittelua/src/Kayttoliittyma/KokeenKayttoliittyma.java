@@ -5,21 +5,17 @@ package Kayttoliittyma;
  * the editor.
  */
 /**
- * Tämä luokka huolehtii kokeen graafisesta ulkoasusta. Nappien taakse on
- * kätketty toimintaa, joka tapahtuu logiikka-pakkauksen luokissa.
- * En tiedä miten tätä voisi testata.
+ * Tämä luokka huolehtii kokeen graafisesta ulkoasusta. Nappien taakse kätkeytyy
+ * toimintaa, joka tapahtuu logiikka-pakkauksen luokissa.
  * @author johanna
  */
-import java.awt.Container;
-import java.awt.Dimension;
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
-import javax.swing.JLabel;
-import javax.swing.*;
-import java.awt.GridLayout;
 import Logiikka.Sanalukija;
 import Logiikka.Sanaparit;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.io.File;
+import javax.swing.*;
 
 public class KokeenKayttoliittyma implements Runnable {
 

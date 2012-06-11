@@ -16,7 +16,7 @@ public class KokeenLogiikka extends Sanankyselija{
     public String getLopetusViesti(){
         return "Koe on ohi, pisteesi: "+oikeinMenneet+"/"+ sanojenMaaraAlussa;
     }
-
+    @Override
     public void etene(boolean olikoOikein) {
         if (olikoOikein) {
             oikeinMenneet++;
