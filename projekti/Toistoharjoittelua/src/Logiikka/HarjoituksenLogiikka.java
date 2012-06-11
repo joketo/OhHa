@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Logiikka;
 
 /**
@@ -28,7 +25,7 @@ public class HarjoituksenLogiikka extends Sanankyselija {
         }
 
         if (kysyttavat.isEmpty()) {
-            onkoLoppu = true; //jotenkin lopetus
+            onkoLoppu = true; //lopetus
 
         } else {
             kysySana();

@@ -1,19 +1,15 @@
 package Logiikka;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  * Sanalukija purkaa saamansa tiedoston kahdenlaiseen HashMappiin. Ohjelmalle kelpaavat tiedostot,
  * joissa joka toisella rivillä on esim. sana suomeksi ja joka toisella sama käännettynä halutulle kielelle.
  * @author johanna
  */
-import Logiikka.Sanaparit;
-import java.util.HashMap;
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Sanalukija {
@@ -43,7 +39,7 @@ public class Sanalukija {
             }
             return sanasto1To2;
         } catch (FileNotFoundException ex) {
-            return sanasto1To2;   //johanna huom! muista käsitellä tämä mahdollisuus, että mappi onkin tyhjä
+            return sanasto1To2;   //muista käsitellä mahdollisuus, että tiedosto onkin tyhjä
         }
     }
 /**
@@ -62,7 +58,7 @@ public class Sanalukija {
             }
             return sanasto2To1;
         } catch (FileNotFoundException ex) {
-            return sanasto2To1;   //johanna huom! muista käsitellä tämä mahdollisuus, että mappi onkin tyhjä
+            return sanasto2To1;   //muista käsitellä mahdollisuus, että tiedosto onkin tyhjä
         }
     }
     /**

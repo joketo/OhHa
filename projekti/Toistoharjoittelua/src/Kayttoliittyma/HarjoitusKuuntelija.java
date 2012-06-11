@@ -42,7 +42,7 @@ public class HarjoitusKuuntelija implements ActionListener {
         this.frame = frame;
 
         harjoituksenLogiikka.kysySana();
-        this.kysymys.setText(harjoituksenLogiikka.getAsetettavaTeksti());
+        this.kysymys.setText("Anna pari: " + harjoituksenLogiikka.getAsetettavaTeksti());
     }
 
     /**
@@ -56,11 +56,11 @@ public class HarjoitusKuuntelija implements ActionListener {
         this.kVastaus = this.kayttajanVastaus.getText();
 
         if (harjoituksenLogiikka.tarkistaJaEtene(kVastaus)) {
-            this.oikeinVaarin.setText("oikein");
+            this.oikeinVaarin.setText("                        oikein");
         } else {
-            this.oikeinVaarin.setText("väärin");
+            this.oikeinVaarin.setText("                        väärin");
         }
-        kysymys.setText(harjoituksenLogiikka.getAsetettavaTeksti());
+        kysymys.setText("Anna pari: " + harjoituksenLogiikka.getAsetettavaTeksti());
         kayttajanVastaus.setText("");
         if (harjoituksenLogiikka.onkoLoppu()) {
             System.out.println("loppu");
@@ -69,7 +69,7 @@ public class HarjoitusKuuntelija implements ActionListener {
                     "Kiitos",
                     JOptionPane.PLAIN_MESSAGE);
             frame.dispose();
-            //lopetus mitä tänne apua ei toimi
+            //lopetus
         }
     }
 }

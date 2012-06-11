@@ -1,27 +1,19 @@
 package Kayttoliittyma;
 
-/*
- * To change this template, choose Tools | Templates and open the template in
- * the editor.
- */
 /**
- * Tämä on ohjelman "aloitusikkuna", josta käyttäjä voi valita, haluaako
- * suorittaa kokeen vai vain harjoitella sanoja. En tiedä miten tätä luokkaa
- * voisi testata. :/
- *
+ *Tämä on ohjelman "aloitusikkuna", josta käyttäjä voi valita, haluaako suorittaa 
+ * kokeen vai vain harjoitella sanoja.
  * @author johanna
  */
-import Logiikka.Koe;
-import Logiikka.Harjoitus;
+
+
 import java.awt.Container;
 import java.awt.Dimension;
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
-import javax.swing.JLabel;
-import javax.swing.*;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
+   
 
 public class Aloitusruutu implements Runnable {
 
@@ -33,7 +25,7 @@ public class Aloitusruutu implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Toistoharjoittelua");
-        frame.setPreferredSize(new Dimension(500, 100));
+        frame.setPreferredSize(new Dimension(500, 250));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,49 +34,94 @@ public class Aloitusruutu implements Runnable {
         frame.pack();
         frame.setVisible(true);
     }
-
     /**
-     * Luo aloitusruudun komponentit ja tapahtumankuuntelijat koe- ja
-     * harjoitusnapeille
-     *
-     * @param container
+     * Luo aloitusruudun komponentit ja tapahtumankuuntelijat koe- ja harjoitusnapeille
+     * @param container 
      */
-    private void luoKomponentit(Container container) {
 
-        JButton valitseTiedosto = new JButton("valitse tiedosto");
-        TiedostoKuuntelija tiedostokuuntelija = new TiedostoKuuntelija();
-        valitseTiedosto.addActionListener(tiedostokuuntelija);
-        String nimi = tiedostokuuntelija.getNimi();
-        System.out.println(nimi);
-        JLabel teksti = new JLabel("   Aloitetaanpa! Tahdotko harjoitella vai suorittaa kokeen?");
-        container.add(teksti);
+    private void luoKomponentit(Container container) {
+       // final JFileChooser fc = new JFileChooser(); tänne rakennetaan tiedostonvalintasysteemiä
+       // int returnVal = fc.showOpenDialog(aComponent);
+
+        JLabel tiedosto = new JLabel("Anna tiedosto");
+        String nimi = "testikoe";
+        JLabel aloitusTeksti = new JLabel("   Aloitetaanpa! Tahdotko harjoitella vai suorittaa kokeen?");
+        
         JButton harjoitella = new JButton("Harjoitella");
         JButton koe = new JButton("Suorittaa kokeen");
-        container.setLayout(new GridLayout(4, 1));
-        Koe koekuuntelija = new Koe(nimi);
-        Harjoitus harjkuuntelija = new Harjoitus(nimi, frame);
+        container.setLayout(new GridLayout(3,1));
+        KoeNappiKuuntelija koekuuntelija = new KoeNappiKuuntelija(nimi);
+        HarjoitusNappiKuuntelija harjkuuntelija = new HarjoitusNappiKuuntelija(nimi);
         koe.addActionListener(koekuuntelija);
         harjoitella.addActionListener(harjkuuntelija);
-        container.add(valitseTiedosto);
+        container.add(aloitusTeksti);
         container.add(harjoitella); // erilliset käyttöliittymät kokeelle ja harjoitukselle
         container.add(koe);
     }
 
     public JFrame getFrame() {
-
-
+        
         return frame;
     }
+    
+    
+    
+ /**
+  * KoeNappiKuuntelija-luokka reagoi Aloitusruudun napin "tahdon suorittaa kokeen" painallukseen
+  * ja käynnistää koekäyttöliittymän
+  * 
+  * @author johanna
+  */
+    
+    public class KoeNappiKuuntelija implements ActionListener {
 
-    private class TiedostoKuuntelija implements ActionListener {
-        public String getNimi(){
-            return fc.getName();
-        }
-        final JFileChooser fc = new JFileChooser();
-        @Override
-        public void actionPerformed(ActionEvent ae) {
-            
-            int returnVal = fc.showSaveDialog(frame);
-        }
+    String tiedostonimi;
+ /**
+  * asettaa tiedostonimen saamansa tiedostonimen mukaiseksi
+  * @param tiedostonnimi 
+  */
+    public KoeNappiKuuntelija(String tiedostonnimi) {
+        this.tiedostonimi = tiedostonnimi;
+    }
+/**
+ * käynnistää graafisen käyttöliittymän kokeelle
+ * @param ae 
+ */
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        KokeenKayttoliittyma kayttoliittyma = new KokeenKayttoliittyma(tiedostonimi);
+        SwingUtilities.invokeLater(kayttoliittyma);
+    }
+    }
+    
+    
+    
+    /**
+ * luokka reagoi Aloitusruudun napin "tahdon harjoitella"
+ * painallukseen ja käynnistää harjoituskäyttöliittymän
+ * @author johanna
+ */
+      
+public class HarjoitusNappiKuuntelija implements ActionListener {
+
+    String tiedostonnimi;
+ 
+    /**
+     * asettaa tiedostonnimen saamakseen nimeksi
+     * @param tiedostonimi 
+     */
+    public HarjoitusNappiKuuntelija(String tiedostonimi) {
+        this.tiedostonnimi = tiedostonimi;
+    }
+/**
+ * käynnistää graafisen käyttöliittymän harjoitukselle
+ * @param ae 
+ */
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        HarjoitusKayttoliittyma kayttoliittyma = new HarjoitusKayttoliittyma(tiedostonnimi);
+        SwingUtilities.invokeLater(kayttoliittyma);
+    }
     }
 }
+

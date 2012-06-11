@@ -37,7 +37,7 @@ public class KokeenKayttoliittyma implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Koe");
-        frame.setPreferredSize(new Dimension(500, 100));
+        frame.setPreferredSize(new Dimension(250, 300));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +51,7 @@ public class KokeenKayttoliittyma implements Runnable {
  * @param container 
  */
     private void luoKomponentit(Container container) {
-        GridLayout layout = new GridLayout(2, 2);
+        GridLayout layout = new GridLayout(3, 1);
         container.setLayout(layout);
 
         JLabel kysymys = new JLabel();
@@ -65,7 +65,6 @@ public class KokeenKayttoliittyma implements Runnable {
 
 
         container.add(vastausKentta);
-        container.add(new JLabel(""));
         container.add(vastaa);
     }
 
