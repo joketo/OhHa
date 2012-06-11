@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- *
+ *osa muuttujista protectedeja vain testejä varten
  * @author johanna
  */
 public abstract class Sanankyselija {
@@ -16,7 +16,7 @@ public abstract class Sanankyselija {
     protected int sanojenMaaraAlussa;
     protected int kysyttykpl = 0;
     private Sanalukija sanalukija;
-    private Sanaparit sanaparit;
+    protected Sanaparit sanaparit;
     private HashMap<String, String> sanasto;
     protected ArrayList<String> kysyttavat;
     protected boolean onkoLoppu = false;

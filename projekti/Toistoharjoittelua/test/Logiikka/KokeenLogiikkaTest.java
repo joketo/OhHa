@@ -48,6 +48,10 @@ public class KokeenLogiikkaTest {
         int result = instance.oikeinMenneet;
         assertEquals(expResult, result);
     }
+    
+    /**
+     * testataan etene-metodia
+     */
     @Test
     public void testPoistuukoSanaListastaKunKysytty(){
         System.out.println("etene");
@@ -58,6 +62,10 @@ public class KokeenLogiikkaTest {
         int result = kokeenLogiikka.kysyttavat.size();
         assertEquals(expResult, result);
     }
+    
+    /**
+     * testataan etene-metodia
+     */
     @Test
     public void testMuuttuukoOnkoLoppuArvoJosLoppu(){
         System.out.println("etene");
@@ -71,16 +79,41 @@ public class KokeenLogiikkaTest {
         instance.etene(olikoOikein);
         instance.etene(olikoOikein);
         boolean expResult = true;
-        boolean result = kokeenLogiikka.onkoLoppu();
+        boolean result = instance.onkoLoppu();
         assertEquals(expResult, result);
     }
+    
+    /**
+     * testataan abstraktia Sanankyselija-luokkaa sen toteuttavan KokeenLogiikka-luokan kautta
+     */
     @Test
     public void testKasvaakoKysyttyjenMaaraKunKysytaan(){
         System.out.println("kysySana");
         KokeenLogiikka instance = kokeenLogiikka;
-        kokeenLogiikka.kysySana();
+        instance.kysySana();
         int expResult = 1;
-        int result = kokeenLogiikka.kysyttykpl;
+        int result = instance.kysyttykpl;
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testGetAsetettavaTeksti(){
+        System.out.println("kysySana");
+        System.out.println("getAsetettavaTeksti");
+        KokeenLogiikka instance = kokeenLogiikka;
+        instance.kysySana();
+        String expResult = instance.kysyttavat.get(instance.nykyinen);
+        String result = instance.getAsetettavaTeksti();
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testGetOikeaVastaus(){
+        System.out.println("kysySana");
+        System.out.println("getOikeaVastaus");
+        KokeenLogiikka instance = kokeenLogiikka;
+        instance.kysySana();
+        String kysyttava =instance.kysyttavat.get(kokeenLogiikka.nykyinen);
+        String expResult = instance.sanaparit.getPariSanasto1To2(kysyttava);
+        String result = instance.getOikeaVastaus();
         assertEquals(expResult, result);
     }
 }
