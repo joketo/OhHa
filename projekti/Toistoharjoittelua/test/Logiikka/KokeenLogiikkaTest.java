@@ -15,47 +15,72 @@ public class KokeenLogiikkaTest {
     
     public KokeenLogiikkaTest() {
     }
-
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-    
+    KokeenLogiikka kokeenLogiikka;
     @Before
     public void setUp() {
+        kokeenLogiikka = new KokeenLogiikka("testikoe");
     }
     
-    @After
-    public void tearDown() {
-    }
-
+ 
     /**
      * Test of getLopetusViesti method, of class KokeenLogiikka.
      */
     @Test
     public void testGetLopetusViesti() {
         System.out.println("getLopetusViesti");
-        KokeenLogiikka instance = null;
-        String expResult = "";
+        KokeenLogiikka instance = kokeenLogiikka;
+        String expResult = "Koe on ohi, pisteesi: "+kokeenLogiikka.oikeinMenneet+"/"+ kokeenLogiikka.sanojenMaaraAlussa;
         String result = instance.getLopetusViesti();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
      * Test of etene method, of class KokeenLogiikka.
      */
     @Test
-    public void testEtene() {
+    public void testKasvaakoOikeinMenneetJosOikein() {
+        System.out.println("etene");
+        boolean olikoOikein = true;
+        KokeenLogiikka instance = kokeenLogiikka;
+        instance.etene(olikoOikein);
+        int expResult = 1;
+        int result = instance.oikeinMenneet;
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testPoistuukoSanaListastaKunKysytty(){
         System.out.println("etene");
         boolean olikoOikein = false;
-        KokeenLogiikka instance = null;
+        KokeenLogiikka instance = kokeenLogiikka;
         instance.etene(olikoOikein);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int expResult = 3;
+        int result = kokeenLogiikka.kysyttavat.size();
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testMuuttuukoOnkoLoppuArvoJosLoppu(){
+        System.out.println("etene");
+        boolean olikoOikein = false;
+        KokeenLogiikka instance = kokeenLogiikka;
+       // while(kokeenLogiikka.kysyttavat.size() >= -1){
+       //     instance.etene(olikoOikein);
+       // }
+        instance.etene(olikoOikein);
+        instance.etene(olikoOikein);
+        instance.etene(olikoOikein);
+        instance.etene(olikoOikein);
+        boolean expResult = true;
+        boolean result = kokeenLogiikka.onkoLoppu();
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testKasvaakoKysyttyjenMaaraKunKysytaan(){
+        System.out.println("kysySana");
+        KokeenLogiikka instance = kokeenLogiikka;
+        kokeenLogiikka.kysySana();
+        int expResult = 1;
+        int result = kokeenLogiikka.kysyttykpl;
+        assertEquals(expResult, result);
     }
 }

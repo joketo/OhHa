@@ -14,7 +14,7 @@ public abstract class Sanankyselija {
     private String kysymys;
     protected int nykyinen = 0;
     protected int sanojenMaaraAlussa;
-    private int kysyttykpl = 0;
+    protected int kysyttykpl = 0;
     private Sanalukija sanalukija;
     private Sanaparit sanaparit;
     private HashMap<String, String> sanasto;
