@@ -4,8 +4,8 @@
  */
 package Logiikka;
 
-import org.junit.*;
 import static org.junit.Assert.*;
+import org.junit.*;
 
 /**
  *
@@ -15,33 +15,24 @@ public class HarjoituksenLogiikkaTest {
     
     public HarjoituksenLogiikkaTest() {
     }
-
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-    
+    HarjoituksenLogiikka harjoituksenLogiikka;
     @Before
     public void setUp() {
+        harjoituksenLogiikka = new HarjoituksenLogiikka("testikoe");
     }
     
-    @After
-    public void tearDown() {
-    }
-
+ 
     /**
      * Test of etene method, of class HarjoituksenLogiikka.
      */
     @Test
-    public void testEtene() {
+    public void testPoistuukoSanaListastaJosVastausOnOikein() {
         System.out.println("etene");
-        boolean olikoOikein = false;
-        HarjoituksenLogiikka instance = null;
+        boolean olikoOikein = true;
+        HarjoituksenLogiikka instance = harjoituksenLogiikka;
         instance.etene(olikoOikein);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int expResult = 3;
+        int result = harjoituksenLogiikka.kysyttavat.size();
+        assertEquals(expResult, result);
     }
 }
