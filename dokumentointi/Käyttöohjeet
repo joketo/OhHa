@@ -1,0 +1,13 @@
+Aja ohjelma.
+Näytöllesi avautuu ikkuna, joka pyytää sinulta tekstitiedostoa. Anna ohjelmalle tiedosto, jonka joka toisella rivillä on kysymys ja joka toisella vastaus.
+Valittuasi tiedoston ohjelma antaa sinun valita, harjoitteletko sanapareja vai suoritatko kokeen.
+HARJOITUS:
+Jos valitset harjoittelun, aukeaa näytöllesi uusi ikkuna, joka kysyy sinulta kysymyksen. Antamastasi tiedostosta riippuen kysymys voi olla esimerkiksi vieraskielinen sana, joka sinun tulee kääntää toiselle kielelle.
+Kirjoita vastauksesi kysyttävän sanan alla olevaan valkoiseen laatikkoon ja paina "Seuraava"-nappia. Tehtyäsi tämän kysyttävä sana muuttuu, ja ikkunan alimpaan palkkiin ilmestyy tieto siitä, oliko äsken antamasi vastaus oikein vai väärin. Jos vastauksesi oli väärin, ohjelma kertoo sinulle oikean vastauksen.
+Ohjelma kyselee sinulta sanoja niin kauan kun annat sille vääriä vastauksia. Kun olet vastannut kaikkiin kysymyksiin oikein, ohjelma kertoo sinulle, että harjoitus on ohi.
+Suljettuasi tämän ilmoitusruudun palaat aloitusruutuun, jossa voit taas valita, haluatko harjoitella vai suorittaa kokeen.
+KOE:
+Jos valitset aloitusruudusta "Suorita koe"-vaihtoehdon, aukeaa näytöllesi uusi ikkuna, joka toimii lähes täysin samoin kuin harjoitus-ikkunakin.
+Vastaa kysymyksiin valkoiseen laatikkoon ja paina "Seuraava"-nappia kunnes ohjelma ilmoittaa kokeen päättyneen. Väärin menneitä sanoja ei kysytä enää uudestaan, mutta lopussa saat tietää, kuinka moneen kysymykseen vastasit oikein.
+
+Jos tahdot lopettaa ohjelman kesken, paina vain ikkunoiden kulmissa olevia rukseja.
