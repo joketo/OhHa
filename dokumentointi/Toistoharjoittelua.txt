@@ -7,21 +7,15 @@ aihe:   Toistoharjoittelua
 	Toteutetaan ohjelma, jonka avulla voi harjoitella sanaparejen muistamista.
         Sanapareja voivat olla esimerkiksi vieraskieliset sanat (sana suomeksi – sama sana vieraalla kielellä).
 
-käyttäjät: sanojen opiskelija ja opettaja
+käyttäjät: sanojen/(kysymysten ja vastausten) opiskelija
 
 opiskelijan toiminnot:
-* sanan arvaus
-     - jos sana on oikein, ilmoitetaan tämä ja siirrytään napin painalluksella seuraavaan
+* sanaparitiedoston lataus
+* sanan/vastauksen arvaus
+     - jos vastaus on oikein, ilmoitetaan tämä ja siirrytään napin painalluksella seuraavaan
 * kokeen suorittaminen
-     - satunnainen setti arvattavia sanoja
-     - jos sana on oikein, saa oppilas yhden pisteen
+     - satunnainen setti arvattavia sanoja/kysymyksiä
+     - jos vastaus on oikein, saa opiskelija yhden pisteen
      - täysistä pisteistä yllätyspalkinto
 * arvosanahistorian listaus
 
-opettajan toiminnot: 
-* uuden sanaparilistan lisäys
-* arvosanahistorian tutkiminen
-* …
-
-kaikkien käyttäjien yhteiset toiminnot:
-* arvosanahistorian listaus
