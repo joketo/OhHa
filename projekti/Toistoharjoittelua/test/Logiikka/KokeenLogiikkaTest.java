@@ -18,7 +18,7 @@ public class KokeenLogiikkaTest {
     KokeenLogiikka kokeenLogiikka;
     @Before
     public void setUp() {
-        kokeenLogiikka = new KokeenLogiikka("testikoe");
+        kokeenLogiikka = new KokeenLogiikka("testikoe.koe");
     }
     
  
@@ -114,6 +114,16 @@ public class KokeenLogiikkaTest {
         String kysyttava =instance.kysyttavat.get(kokeenLogiikka.nykyinen);
         String expResult = instance.sanaparit.getPariSanasto1To2(kysyttava);
         String result = instance.getOikeaVastaus();
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testTarkistaJaEtene(){
+        System.out.println("tarkistaJaEtene");
+        System.out.println("onkoOikein");
+        KokeenLogiikka instance = kokeenLogiikka;
+        instance.tarkistaJaEtene("asf");
+        boolean expResult = false;
+        boolean result = instance.tarkistaJaEtene("nkh");
         assertEquals(expResult, result);
     }
 }

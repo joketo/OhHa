@@ -31,7 +31,7 @@ public class SanalukijaTest {
         sanasto2To1.put("a flower", "kukka");
         sanasto2To1.put("a guitar", "kitara");
         sanasto2To1.put("bread", "leipä");
-        sananlukija = new Sanalukija(new File("testikoe"));
+        sananlukija = new Sanalukija(new File("testikoe.koe"));
     }
 
     /**
@@ -51,7 +51,7 @@ public class SanalukijaTest {
     public void testLuoSanaparitOlio2() {
         System.out.println("luoSanaparitOlio");
         Sanalukija instance = sananlukija;
-        HashMap<String, String> expResult = sanasto2To1;
+        HashMap<String, String> expResult = sanasto1To2;
         HashMap<String, String> result = instance.luoSanaparitOlio().getSanasto2To1();
         assertEquals(expResult, result);
 

@@ -19,7 +19,7 @@ public class HarjoituksenLogiikkaTest {
 
     @Before
     public void setUp() {
-        harjoituksenLogiikka = new HarjoituksenLogiikka("testikoe");
+        harjoituksenLogiikka = new HarjoituksenLogiikka("testikoe.koe");
     }
 
     /**
