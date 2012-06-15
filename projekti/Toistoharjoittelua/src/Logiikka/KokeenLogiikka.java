@@ -37,7 +37,6 @@ public class KokeenLogiikka extends Sanankyselija {
         kysyttavat.remove(nykyinen);
 
         if (kysyttavat.isEmpty()) {
-            System.out.println("Koe on ohi, pisteesi: " + oikeinMenneet + "/" + sanojenMaaraAlussa);
             historia.lisaaTulos(oikeinMenneet);
             onkoLoppu = true; //lopetus
 

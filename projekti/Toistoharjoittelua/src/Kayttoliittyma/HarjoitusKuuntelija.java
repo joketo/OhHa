@@ -60,7 +60,6 @@ public class HarjoitusKuuntelija implements ActionListener {
         kysymys.setText("Anna pari: " + harjoituksenLogiikka.getAsetettavaTeksti());
         kayttajanVastaus.setText("");
         if (harjoituksenLogiikka.onkoLoppu()) {
-            System.out.println("loppu");
             JOptionPane.showMessageDialog(frame,
                     "Harjoitus on ohi.",
                     "Kiitos",

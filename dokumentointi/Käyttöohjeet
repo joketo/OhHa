@@ -3,7 +3,7 @@ TOISTOHARJOITTELUA -käyttöohjeet
 Aja ohjelma.
 Näytöllesi avautuu ikkuna, joka pyytää sinulta tekstitiedostoa.
 Anna ohjelmalle tiedosto, jonka joka toisella rivillä on kysymys ja joka toisella vastaus.
-Älä anna ohjelmalle muita kuin .koe -tiedostoja. Tällaisen tiedoston löydät projekti-> testikoe.koe. Voit sillä testata ohjelmaa.
+Älä anna ohjelmalle muita kuin .koe -tiedostoja. Tällaisen tiedoston löydät projekti->toistoharjoittelua->testikoe.koe. Voit sillä testata ohjelmaa.
 Valittuasi tiedoston ohjelma antaa sinun valita, harjoitteletko sanapareja vai suoritatko kokeen.
 Voit myös valita "tarkastele tuloksia" -vaihtoehdon, jossa eteesi aukeaa kokeen korkein pistemäärä ja koesuoritusten keskiarvo.
 Huom. tarkastele tuloksia-ominaisuuden lopullinen toteutus jäi jatkokehityksen huoleksi.

@@ -40,9 +40,8 @@ public abstract class Sanankyselija {
     public void kysySana() {
         String kysyttava = kysyttavat.get(nykyinen);
         kysyttykpl++;
-        System.out.println("Anna pari: " + kysyttava);
+
         oikeaVastaus = sanaparit.getPariSanasto1To2(kysyttava);
-        System.out.println("(oikea pari " + sanaparit.getPariSanasto1To2(kysyttava) + ")");
         kysymys = kysyttava;
     }
     /**
@@ -86,7 +85,6 @@ public abstract class Sanankyselija {
     * @return 
     */
     public boolean tarkistaJaEtene(String vastaus) {
-        System.out.println("nyk: " + nykyinen + " jaljella: " + (kysyttavat.size() - 1));
         boolean oikeinVaiVaarin = onkoOikein(vastaus);
         if (!kysyttavat.isEmpty()) {
             etene(oikeinVaiVaarin);

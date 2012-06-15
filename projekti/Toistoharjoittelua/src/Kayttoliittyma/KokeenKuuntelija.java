@@ -57,7 +57,6 @@ public class KokeenKuuntelija implements ActionListener {
 
         kayttajanVastaus.setText("");
         if (kokeenLogiikka.onkoLoppu()) {
-            System.out.println("loppu");
             JOptionPane.showMessageDialog(frame,
                     kokeenLogiikka.getLopetusViesti(),
                     "Kiitos",

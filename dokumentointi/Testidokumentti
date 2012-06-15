@@ -1,0 +1,9 @@
+Testasin ohjelmaa sitä mukaa kun sitä tein pyytämällä sitä tulostamaan tiettyjä sanoja, jos ohjelma pääsee tiettyyn pisteeseen.
+Tämä testaustyyli veroitti JUnit-testejeni kattavuutta, sillä niiden teko ei ollut välttämätöntä ohjelmani edistyksen kannalta.
+Tein JUnit-testejä kuitenkin niin paljon kun niitä keksin, vaikka niiden määrä näyttääkin ehkä pieneltä.
+Sanaparit ja Sanalukija -luokilla ei ole montaa metodia, vaikka nämä ohjelman kannalta tärkeitä luokkia ovatkin, enkä siksi keksinyt niille suurta määrää testejä.
+Sanankyselijä-luokka on abstrakti, joten testasin sitä KokeenLogiikka -luokan kautta, sillä tämä perii sen ja sen metodit.
+HarjoituksenLogiikka-luokka perii myös Sanankysyselijän, mutta toteuttaa vain yhden metodin itse.
+En näe tarpeelliseksi testata Sanankyselijä -luokkaa sekä KokeenLogiikan että HarjoituksenLogiikan kautta, ja siksi HarjoituksenLogiikassa on näennäisesti niin vähän testejä.
+Tännekin on hyvä laittaa pahoittelut keskenolevasta TulosHistoria-luokasta. Siitä piti tulla valmis, mutta kun ei tullutkaan kun aika loppui.
+Jätin sen projektiin silti, että näkisitte että ohjelmaa VOI jatkokehittää.

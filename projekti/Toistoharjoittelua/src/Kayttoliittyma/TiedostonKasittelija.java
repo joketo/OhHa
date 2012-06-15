@@ -57,7 +57,6 @@ public class TiedostonKasittelija extends JPanel
                 File file = fc.getSelectedFile();
                 log.append("Avataan: " + file.getName() + "." + newline);
                 this.tiedostoNimi = file.getName();
-                System.out.println(file.getName());
                 Aloitusruutu kayttoliittyma = new Aloitusruutu(this.tiedostoNimi);
                 SwingUtilities.invokeLater(kayttoliittyma);
                 frame.dispose();
