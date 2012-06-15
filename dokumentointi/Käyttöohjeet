@@ -4,6 +4,7 @@ Aja ohjelma.
 Näytöllesi avautuu ikkuna, joka pyytää sinulta tekstitiedostoa.
 Anna ohjelmalle tiedosto, jonka joka toisella rivillä on kysymys ja joka toisella vastaus.
 Valittuasi tiedoston ohjelma antaa sinun valita, harjoitteletko sanapareja vai suoritatko kokeen.
+Voit myös valita "tarkastele tuloksia" -vaihtoehdon, jossa eteesi aukeaa kokeen korkein pistemäärä ja koesuoritusten keskiarvo.
 
 HARJOITUS:
 Jos valitset harjoittelun, aukeaa näytöllesi uusi ikkuna, joka kysyy sinulta kysymyksen.
