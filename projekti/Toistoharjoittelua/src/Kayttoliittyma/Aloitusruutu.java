@@ -25,7 +25,7 @@ public class Aloitusruutu implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Toistoharjoittelua");
-        frame.setPreferredSize(new Dimension(400, 250));
+        frame.setPreferredSize(new Dimension(600, 250));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,15 +42,11 @@ public class Aloitusruutu implements Runnable {
      * @param container
      */
     private void luoKomponentit(Container container) {
-        // final JFileChooser fc = new JFileChooser(); //tänne rakennetaan tiedostonvalintasysteemiä
-        // int returnVal = fc.showOpenDialog(aComponent);
-
-        //JLabel tiedosto = new JLabel("Anna tiedosto");
-         //String nimi = "testikoe";
-        JLabel aloitusTeksti = new JLabel("              Tahdotko harjoitella vai suorittaa kokeen?");
+        JLabel aloitusTeksti = new JLabel("Tahdotko harjoitella vai suorittaa kokeen? Voit myös tarkastella tuloshistoriaa");
         JButton harjoitella = new JButton("Harjoittele");
         JButton koe = new JButton("Suorita koe");
-        container.setLayout(new GridLayout(3, 1));
+        JButton tarkastele = new JButton("Tarkastele tuloksia");
+        container.setLayout(new GridLayout(4, 1));
 
         HarjoitusNappiKuuntelija harjkuuntelija = new HarjoitusNappiKuuntelija(this.tiedostonimi); //harjoittele
         KoeNappiKuuntelija koekuuntelija = new KoeNappiKuuntelija(this.tiedostonimi); // suorita koe
@@ -61,6 +57,7 @@ public class Aloitusruutu implements Runnable {
         container.add(aloitusTeksti);
         container.add(harjoitella); // erilliset käyttöliittymät kokeelle ja harjoitukselle
         container.add(koe);
+        container.add(tarkastele);
     }
 
     public JFrame getFrame() {

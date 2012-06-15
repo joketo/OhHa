@@ -14,7 +14,6 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String tiedostonimi;
         final TiedostonLukija tiedostonLukija = new TiedostonLukija();
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -23,14 +22,5 @@ public class Main {
                 tiedostonLukija.createAndShowGUI();
             }
         });
-        tiedostonimi = tiedostonLukija.tiedostoNimi;
-        System.out.println(tiedostonimi);
-      //  if(tiedostonimi != null){
-      //  Aloitusruutu kayttoliittyma = new Aloitusruutu();
-       // SwingUtilities.invokeLater(kayttoliittyma);
-      //  }
-      //  else{
-      //      System.out.println("pieleen meni");
-     //   }
     }
 }

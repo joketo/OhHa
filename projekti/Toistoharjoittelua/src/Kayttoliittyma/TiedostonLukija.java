@@ -59,13 +59,15 @@ public class TiedostonLukija extends JPanel
                 log.append("Avataan: " + file.getName() + "." + newline);
                 this.tiedostoNimi = file.getName();
                 System.out.println(file.getName());
+                Aloitusruutu kayttoliittyma = new Aloitusruutu(this.tiedostoNimi);
+                SwingUtilities.invokeLater(kayttoliittyma);
+                frame.dispose();
             } else {
-                log.append("Open command cancelled by user." + newline);
+                log.append("Tiedoston avaus peruutettu." + newline);
             }
             log.setCaretPosition(log.getDocument().getLength());
-            Aloitusruutu kayttoliittyma = new Aloitusruutu(this.tiedostoNimi);
-            SwingUtilities.invokeLater(kayttoliittyma);
-            frame.dispose();
+            
+            
         }
     }
     public String annaTiedostoNimi(){
@@ -73,7 +75,7 @@ public class TiedostonLukija extends JPanel
     }
     public static void createAndShowGUI() {
         //Create and set up the window.
-        frame = new JFrame("Testausta");
+        frame = new JFrame("Anna tiedosto");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Add content to the window.
