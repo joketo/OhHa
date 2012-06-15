@@ -16,8 +16,10 @@ import javax.swing.*;
 public class Aloitusruutu implements Runnable {
 
     private JFrame frame;
+    String tiedostonimi;
 
-    public Aloitusruutu() {
+    public Aloitusruutu(String tiedostonimi) {
+        this.tiedostonimi = tiedostonimi;
     }
 
     @Override
@@ -44,14 +46,14 @@ public class Aloitusruutu implements Runnable {
         // int returnVal = fc.showOpenDialog(aComponent);
 
         //JLabel tiedosto = new JLabel("Anna tiedosto");
-        String nimi = "testikoe";
+         //String nimi = "testikoe";
         JLabel aloitusTeksti = new JLabel("              Tahdotko harjoitella vai suorittaa kokeen?");
         JButton harjoitella = new JButton("Harjoittele");
         JButton koe = new JButton("Suorita koe");
         container.setLayout(new GridLayout(3, 1));
 
-        HarjoitusNappiKuuntelija harjkuuntelija = new HarjoitusNappiKuuntelija(nimi); //harjoittele
-        KoeNappiKuuntelija koekuuntelija = new KoeNappiKuuntelija(nimi); // suorita koe
+        HarjoitusNappiKuuntelija harjkuuntelija = new HarjoitusNappiKuuntelija(this.tiedostonimi); //harjoittele
+        KoeNappiKuuntelija koekuuntelija = new KoeNappiKuuntelija(this.tiedostonimi); // suorita koe
         koe.addActionListener(koekuuntelija);
         harjoitella.addActionListener(harjkuuntelija);
 

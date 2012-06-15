@@ -63,6 +63,8 @@ public class TiedostonLukija extends JPanel
                 log.append("Open command cancelled by user." + newline);
             }
             log.setCaretPosition(log.getDocument().getLength());
+            Aloitusruutu kayttoliittyma = new Aloitusruutu(this.tiedostoNimi);
+            SwingUtilities.invokeLater(kayttoliittyma);
             frame.dispose();
         }
     }

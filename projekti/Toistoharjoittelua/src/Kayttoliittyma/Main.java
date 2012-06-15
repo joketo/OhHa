@@ -25,12 +25,12 @@ public class Main {
         });
         tiedostonimi = tiedostonLukija.tiedostoNimi;
         System.out.println(tiedostonimi);
-        if(tiedostonimi != null){
-        Aloitusruutu kayttoliittyma = new Aloitusruutu();
-        SwingUtilities.invokeLater(kayttoliittyma);
-        }
-        else{
-            System.out.println("pieleen meni");
-        }
+      //  if(tiedostonimi != null){
+      //  Aloitusruutu kayttoliittyma = new Aloitusruutu();
+       // SwingUtilities.invokeLater(kayttoliittyma);
+      //  }
+      //  else{
+      //      System.out.println("pieleen meni");
+     //   }
     }
 }
