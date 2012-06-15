@@ -7,7 +7,8 @@ package Logiikka;
  */
 public class KokeenLogiikka extends Sanankyselija {
 
-    public int oikeinMenneet = 0;
+    public Integer oikeinMenneet = 0;
+    TulosHistoria historia = new TulosHistoria();
 
     public KokeenLogiikka(String tiedostonimi) {
         super(tiedostonimi);
@@ -37,6 +38,7 @@ public class KokeenLogiikka extends Sanankyselija {
 
         if (kysyttavat.isEmpty()) {
             System.out.println("Koe on ohi, pisteesi: " + oikeinMenneet + "/" + sanojenMaaraAlussa);
+            historia.lisaaTulos(oikeinMenneet);
             onkoLoppu = true; //lopetus
 
         } else {

@@ -1,10 +1,6 @@
 package Kayttoliittyma;
 
-/**
- * Tämä luokka huolehtii kokeen graafisesta ulkoasusta. Nappien taakse kätkeytyy
- * toimintaa, joka tapahtuu logiikka-pakkauksen luokissa.
- * @author johanna
- */
+
 import Logiikka.Sanalukija;
 import Logiikka.Sanaparit;
 import java.awt.Container;
@@ -12,7 +8,11 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.io.File;
 import javax.swing.*;
-
+/**
+ * Tämä luokka huolehtii kokeen graafisesta ulkoasusta. Nappien taakse kätkeytyy
+ * toimintaa, joka tapahtuu logiikka-pakkauksen luokissa.
+ * @author johanna
+ */
 public class KokeenKayttoliittyma implements Runnable {
 
     private JFrame frame;

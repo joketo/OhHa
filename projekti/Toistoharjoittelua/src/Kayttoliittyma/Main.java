@@ -14,7 +14,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        final TiedostonLukija tiedostonLukija = new TiedostonLukija();
+        final TiedostonKasittelija tiedostonLukija = new TiedostonKasittelija();
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 //Turn off metal's use of bold fonts

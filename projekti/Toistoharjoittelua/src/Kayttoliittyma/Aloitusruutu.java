@@ -6,6 +6,7 @@ package Kayttoliittyma;
  *
  * @author johanna
  */
+import Logiikka.TulosHistoria;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -50,8 +51,10 @@ public class Aloitusruutu implements Runnable {
 
         HarjoitusNappiKuuntelija harjkuuntelija = new HarjoitusNappiKuuntelija(this.tiedostonimi); //harjoittele
         KoeNappiKuuntelija koekuuntelija = new KoeNappiKuuntelija(this.tiedostonimi); // suorita koe
+        HistoriaNapinkuuntelija histkuuntelija = new HistoriaNapinkuuntelija();
         koe.addActionListener(koekuuntelija);
         harjoitella.addActionListener(harjkuuntelija);
+        tarkastele.addActionListener(histkuuntelija);
 
 
         container.add(aloitusTeksti);
@@ -124,6 +127,20 @@ public class Aloitusruutu implements Runnable {
         public void actionPerformed(ActionEvent ae) {
             HarjoitusKayttoliittyma kayttoliittyma = new HarjoitusKayttoliittyma(tiedostonnimi);
             SwingUtilities.invokeLater(kayttoliittyma);
+        }
+    }
+    /**
+     * Luokka reagoi tulokset-napit painamiseen ja näyttää erilaisia koetuloksia
+     */
+    public class HistoriaNapinkuuntelija implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            TulosHistoria historia = new TulosHistoria();
+            JOptionPane.showMessageDialog(frame,
+                    "Keskiarvo: " + historia.getKeskiArvo() + "\nParas tulos: " + historia.getParasTulos()
+                    + "\nKokeita suoritettu: " + historia.getTulostenKplMaara(),
+                    "Koetulokset:",
+                    JOptionPane.PLAIN_MESSAGE);
         }
     }
 }

@@ -12,10 +12,10 @@ import java.io.File;
 import javax.swing.*;
 
 /**
- *
+ * pyytää käyttäjältä tiedoston graafisen käyttöliittymän kautta
  * @author johanna
  */
-public class TiedostonLukija extends JPanel
+public class TiedostonKasittelija extends JPanel
         implements ActionListener {
 
     static private final String newline = "\n";
@@ -25,37 +25,36 @@ public class TiedostonLukija extends JPanel
     JTextArea log;
     JFileChooser fc;
 
-    public TiedostonLukija() {
+    public TiedostonKasittelija() {
         super(new BorderLayout());
-
-        //Create the log first, because the action listeners
-        //need to refer to it.
         log = new JTextArea(5, 20);
         log.setMargin(new Insets(5, 5, 5, 5));
         log.setEditable(false);
         JScrollPane logScrollPane = new JScrollPane(log);
 
-        //Create a file chooser
+        //luodaan tiedostonvalitsin
         fc = new JFileChooser();
 
         avaaTiedosto = new JButton("Avaa tiedosto...");
         avaaTiedosto.addActionListener(this);
-        JPanel buttonPanel = new JPanel(); //use FlowLayout
+        JPanel buttonPanel = new JPanel();
         buttonPanel.add(avaaTiedosto);
-        //Add the buttons and the log to this panel.
         add(buttonPanel, BorderLayout.PAGE_START);
         add(logScrollPane, BorderLayout.CENTER);
     }
-
+/**
+ * käsittelee napin painamisesta tapahtuvat asiat. Ottaa tiedostonimen talteen ja 
+ * käynnistää Aloitusruudun
+ * @param e 
+ */
+    @Override
     public void actionPerformed(ActionEvent e) {
 
-        //Handle open button action.
         if (e.getSource() == avaaTiedosto) {
-            int returnVal = fc.showOpenDialog(TiedostonLukija.this);
+            int palautusArvo = fc.showOpenDialog(TiedostonKasittelija.this);
 
-            if (returnVal == JFileChooser.APPROVE_OPTION) {
+            if (palautusArvo == JFileChooser.APPROVE_OPTION) {
                 File file = fc.getSelectedFile();
-                //This is where a real application would open the file.
                 log.append("Avataan: " + file.getName() + "." + newline);
                 this.tiedostoNimi = file.getName();
                 System.out.println(file.getName());
@@ -70,18 +69,16 @@ public class TiedostonLukija extends JPanel
             
         }
     }
-    public String annaTiedostoNimi(){
-        return this.tiedostoNimi;
-    }
+    /**
+     * luo ikkunan, lisää siihen jutut ja asettaa ikkunan näkyväksi
+     */
     public static void createAndShowGUI() {
-        //Create and set up the window.
+
         frame = new JFrame("Anna tiedosto");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //Add content to the window.
-        frame.add(new TiedostonLukija());
+        frame.add(new TiedostonKasittelija());
 
-        //Display the window.
         frame.pack();
         frame.setVisible(true);
     }
